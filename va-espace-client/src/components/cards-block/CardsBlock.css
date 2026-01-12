@@ -1,0 +1,16 @@
+.cards-block .section {
+  background-color: #86bc80;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  /* min-height: 80vh; */
+}
+
+/* .cards-block .section {
+  min-height: 80vh;
+} */
+
+.cards-block .card {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 12px;
+}

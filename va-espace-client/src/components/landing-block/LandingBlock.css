@@ -1,0 +1,30 @@
+/* src/components/LandingBlock.css */
+
+.landing-block {
+  background-color: #ffffff;
+  background-color: #f5f5f5;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.languages {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.landing-image {
+  max-width: 100%;
+}
+
+.bottom-links a {
+  font-weight: 600;
+  color: #363636;
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+}

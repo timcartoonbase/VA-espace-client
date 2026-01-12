@@ -1,0 +1,74 @@
+/* 1. Load fonts */
+@font-face {
+  font-family: "Fedra B";
+  src: url("./assets/fonts/FedraSerifPro-b-medium.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fedra A";
+  src: url("./assets/fonts/fedraserifpro-a-mediumita.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Global base styles */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Fedra B", system-ui, sans-serif;
+  color: #1f2933;
+  background-color: #ffffff;
+}
+
+/* 3. Typography */
+h1 {
+  font-family: "Fedra B", system-ui, sans-serif;
+  color: #028141;
+}
+
+h2 {
+  font-family: "Fedra B", system-ui, sans-serif;
+  color: #ffffff;
+}
+
+h3 {
+  font-family: "Fedra B", system-ui, sans-serif;
+  color: #3e3e3e;
+}
+
+h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* 4. Links */
+a {
+  color: #3273dc; /* Bulma primary */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

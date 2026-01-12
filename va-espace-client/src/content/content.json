@@ -1,0 +1,50 @@
+{
+  "fr": {
+    "landing-block": {
+      "title": "Espace Client",
+      "cta": "Vidéo teaser",
+      "links": ["Lien A", "Lien B", "Lien C"]
+    },
+    "cards-block": {
+      "title": "Comprendre la philosophie de l’Espace client",
+      "cards": [
+        {
+          "title": "Carte Un",
+          "text": "Description pour la première carte."
+        },
+        {
+          "title": "Carte Deux",
+          "text": "Description pour la deuxième carte."
+        },
+        {
+          "title": "Carte Trois",
+          "text": "Description pour la troisième carte."
+        }
+      ]
+    },
+    "hero-block-1": {
+      "title": "Ayez le reflexe Espace client !",
+      "subtitle": "À la signature d’un contrat ou lors d’un échange approprié, aidez votre client à accéder facilement à tous nos services en ligne en créant son Espace client avec lui.",
+      "description": "Dans la fiche client Portail, section “Identité“ complète, cliquez sur “Ajouter un utilisateur“."
+    },
+    "hero-block-2": {
+      "title": "Ayez le reflexe Espace client !",
+      "subtitle": "",
+      "description": "Dans la fiche client Portail, section “Identité“ complète, cliquez sur “Ajouter un utilisateur“."
+    }
+  },
+  "it": {
+    "landing": {
+      "title": "Area Clienti",
+      "cta": "Video teaser",
+      "links": ["Link A", "Link B", "Link C"]
+    }
+  },
+  "de": {
+    "landing": {
+      "title": "Kundenbereich",
+      "cta": "Video Teaser",
+      "links": ["Link A", "Link B", "Link C"]
+    }
+  }
+}
