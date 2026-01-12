@@ -1,12 +1,12 @@
-.section {
+/* .section {
   padding: 2rem 0;
-}
+} */
 
-.footer {
+.footer-block {
   background-color: #ffffff;
   padding: 0;
 }
 
-.image img {
+.logo {
   max-width: 200px;
 }
