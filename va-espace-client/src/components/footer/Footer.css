@@ -1,0 +1,12 @@
+.section {
+  padding: 2rem 0;
+}
+
+.footer {
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.image img {
+  max-width: 200px;
+}
