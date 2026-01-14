@@ -1,0 +1,30 @@
+.cta-block .section {
+  background-color: #80ae8c;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  /* min-height: 80vh; */
+}
+
+/* .cards-block .section {
+  min-height: 80vh;
+} */
+
+.cards-block .card {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.languageBtn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #80ae8c;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+}

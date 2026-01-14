@@ -72,3 +72,12 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+button {
+  font-family: "Fedra B", system-ui, sans-serif;
+  color: #ffffff;
+  background-color: #8dc6a0;
+  border: #000000 2px solid;
+  padding: 6px 30px;
+  border-radius: 20px;
+}
