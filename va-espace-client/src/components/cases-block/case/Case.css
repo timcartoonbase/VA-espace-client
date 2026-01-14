@@ -1,0 +1,22 @@
+/* Case.css */
+.case-card {
+  height: 100%;
+  display: flex;
+}
+
+.case-card-content {
+  flex: 1;
+  min-height: 260px; /* 🔑 key line */
+  aspect-ratio: 478 / 330;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.caseText {
+  color: #ffffff;
+  font-size: 0.9rem;
+}

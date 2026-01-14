@@ -27,20 +27,10 @@ const CasesBlock = ({ content, casesImage }) => {
           </div>
 
           <div className="columns is-multiline is-variable is-6 mt-6">
-            <Case image={CaseImage1} caseText="Case 1" />
-            <Case image={CaseImage2} caseText="Case 2" />
-            <Case image={CaseImage3} caseText="Case 3" />
-            <Case image={CaseImage4} caseText="Case 4" />
-            {/* {content.cards.map((card, index) => (
-              <div className={"column is-half"} key={index}>
-                <div className="card block-2-card">
-                  <div className="card-content">
-                    <h3>{card.title}</h3>
-                    <p>{card.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))} */}
+            <Case image={CaseImage1} caseText={content.case_1_title} />
+            <Case image={CaseImage2} caseText={content.case_2_title} />
+            <Case image={CaseImage3} caseText={content.case_3_title} />
+            <Case image={CaseImage4} caseText={content.case_4_title} />
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const CallToActionBlock = ({ content }) => {
   // Determine layout based on number of cards
   return (
     <section className={"cta-block"}>
-      <div className="section is-flex is-align-items-center">
+      <div className="section">
         <div className="container ">
           <div className="columns is-flex is-align-items-center is-justify-content-center mb-4">
             <div className="">
