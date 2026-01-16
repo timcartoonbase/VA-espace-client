@@ -11,7 +11,6 @@ import content from "./content/content.json";
 import heroImage1 from "./assets/images/hero-image-1.svg";
 import heroImage2 from "./assets/images/hero-image-2.svg";
 import casesImage from "./assets/images/cases-image.svg";
-// import riveCardV1 from "./assets/rives/card-v-1.riv";
 
 function App() {
   const [lang, setLang] = useState("fr");

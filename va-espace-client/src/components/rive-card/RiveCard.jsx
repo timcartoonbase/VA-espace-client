@@ -6,7 +6,7 @@ import "./RiveCard.css";
 const RiveCard = ({ riveFile, title, subtitle, description, isVertical }) => {
   // Setup Rive instance
   const { rive, RiveComponent } = useRive({
-    src: riveFile,
+    src: `${import.meta.env.BASE_URL}${riveFile}`,
     stateMachines: "State Machine 1",
     autoplay: true,
     fit: "cover", // options: 'contain' | 'cover' | 'fill'
