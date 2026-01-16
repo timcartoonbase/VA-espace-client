@@ -63,8 +63,8 @@ const CardsBlock = ({
                 <RiveCard
                   riveFile={
                     isVertical
-                      ? `/rives/card-v-${index + 1}.riv`
-                      : `/rives/card-h-${index + 1}.riv`
+                      ? `rives/card-v-${index + 1}.riv`
+                      : `rives/card-h-${index + 1}.riv`
                   }
                   title={card.title}
                   subtitle={card.subtitle} // optional
