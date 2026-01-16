@@ -61,19 +61,18 @@ const CardsBlock = ({
                 key={index}
               >
                 <RiveCard
-                  riveFile={`/rives/card-v-${index + 1}.riv`}
+                  riveFile={
+                    isVertical
+                      ? `/rives/card-v-${index + 1}.riv`
+                      : `/rives/card-h-${index + 1}.riv`
+                  }
                   title={card.title}
                   subtitle={card.subtitle} // optional
                   //   description={card.text}
+                  isVertical={isVertical}
                 />
               </div>
             ))}
-            {/* <RiveCard
-              riveFile={`/rives/card-v-1.riv`}
-              title={"Card Title 1"}
-              subtitle={"Card Subtitle 1"}
-              description={"This is the description for card 1."}
-            /> */}
           </div>
         </div>
       </div>

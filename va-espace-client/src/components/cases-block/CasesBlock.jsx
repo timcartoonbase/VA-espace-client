@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import Case from "./case/Case";
+import Modal from "../shared/modal/Modal";
 
 import CaseImage1 from "../../assets/images/case-card-1.svg";
 import CaseImage2 from "../../assets/images/case-card-2.svg";
@@ -8,6 +10,8 @@ import CaseImage4 from "../../assets/images/case-card-4.svg";
 import "./CasesBlock.css";
 
 const CasesBlock = ({ content, casesImage }) => {
+  const [activeCase, setActiveCase] = useState(null);
+
   return (
     <section className="cases-block mb-6">
       <div className="section cases-section">
@@ -27,11 +31,34 @@ const CasesBlock = ({ content, casesImage }) => {
           </div>
 
           <div className="columns is-multiline is-variable is-6 mt-6">
-            <Case image={CaseImage1} caseText={content.case_1_title} />
-            <Case image={CaseImage2} caseText={content.case_2_title} />
-            <Case image={CaseImage3} caseText={content.case_3_title} />
-            <Case image={CaseImage4} caseText={content.case_4_title} />
+            <Case
+              image={CaseImage1}
+              caseText={content.case_1_title}
+              onClick={() => setActiveCase(1)}
+            />
+            <Case
+              image={CaseImage2}
+              caseText={content.case_2_title}
+              onClick={() => console.log("Case 2 clicked")}
+            />
+            <Case
+              image={CaseImage3}
+              caseText={content.case_3_title}
+              onClick={() => console.log("Case 3 clicked")}
+            />
+            <Case
+              image={CaseImage4}
+              caseText={content.case_4_title}
+              onClick={() => console.log("Case 4 clicked")}
+            />
           </div>
+          <Modal
+            isOpen={activeCase !== null}
+            onClose={() => setActiveCase(null)}
+          >
+            <h2>Case {activeCase}</h2>
+            <p>Carousel goes here next 👀</p>
+          </Modal>
         </div>
       </div>
     </section>

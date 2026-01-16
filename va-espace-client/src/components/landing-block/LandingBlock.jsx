@@ -7,20 +7,6 @@ const LandingBlock = ({ content, lang, setLang }) => {
   return (
     <section className="landing-block">
       <div className="section">
-        {/* Top Right Language Buttons */}
-        {/* <div className="languages">
-          <button className="langBtn" onClick={() => setLang("fr")}>
-            FR
-          </button>
-          <span className="langBtn"> | </span>
-          <button className="langBtn" onClick={() => setLang("it")}>
-            IT
-          </button>
-          <span className="langBtn"> | </span>
-          <button className="langBtn" onClick={() => setLang("de")}>
-            DE
-          </button>
-        </div> */}
         {/* Language Switch */}
         <div className="languages">
           {["fr", "it", "de"].map((l) => (
@@ -31,15 +17,15 @@ const LandingBlock = ({ content, lang, setLang }) => {
         </div>
 
         <div className="container is-fullheight">
-          <div className="columns is-vcentered is-variable is-8">
+          <div className="columns is-vcentered is-variable is-8 is-flex pl-5">
             {/* Left Side: Title + CTA */}
-            <div className="column is-half">
+            <div className="column is-7 has-text-left">
               <h1>{content?.title}</h1>
               <button className="mt-4">{content?.cta}</button>
             </div>
 
             {/* Right Side: Image */}
-            <div className="column is-half">
+            <div className="column is-5 pr-5">
               <figure className="image">
                 <img
                   className="landing-image has-ratio"
@@ -53,16 +39,16 @@ const LandingBlock = ({ content, lang, setLang }) => {
           </div>
 
           {/* Bottom Links */}
-          <div className="bottom-links has-text-centered mt-5">
-            <a href="#linkA" className="mx-3">
+          <div className="bottom-links has-text-centered mt-6">
+            <a href="#linkA" className="landing-links mx-3">
               {content?.link_1}
             </a>
             <span> | </span>
-            <a href="#linkB" className="mx-3">
+            <a href="#linkB" className="landing-links mx-3">
               {content?.link_2}
             </a>
             <span> | </span>
-            <a href="#linkC" className="mx-3">
+            <a href="#linkC" className="landing-links mx-3">
               {content?.link_3}
             </a>
           </div>

@@ -46,7 +46,8 @@ h4 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  font-weight: 500;
 }
 
 h2 {
@@ -63,6 +64,11 @@ p {
   color: #000000;
 }
 
+a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* 4. Links */
 a {
   color: #3273dc; /* Bulma primary */
@@ -76,7 +82,7 @@ a:hover {
 button {
   font-family: "Fedra B", system-ui, sans-serif;
   color: #ffffff;
-  background-color: #8dc6a0;
+  background-color: #028141;
   border: #000000 2px solid;
   padding: 6px 30px;
   border-radius: 20px;

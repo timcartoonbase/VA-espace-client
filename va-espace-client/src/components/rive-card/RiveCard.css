@@ -1,6 +1,11 @@
 .rive-card {
   width: 100%;
-  height: 350px;
+  height: 500px;
+}
+
+.rive-card-h {
+  width: 100%;
+  height: 300px;
 }
 
 .rive-card canvas {

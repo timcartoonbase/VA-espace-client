@@ -2,11 +2,20 @@
 .case-card {
   height: 100%;
   display: flex;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.case-card:hover,
+.case-card:focus-within {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .case-card-content {
   flex: 1;
-  min-height: 260px; /* 🔑 key line */
+  min-height: 150px; /* 🔑 key line */
   aspect-ratio: 478 / 330;
   background-size: cover;
   background-position: center;
