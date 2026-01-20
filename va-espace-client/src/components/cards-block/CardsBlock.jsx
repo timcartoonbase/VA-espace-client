@@ -27,7 +27,6 @@ const CardsBlock = ({
 
   // Determine layout based on number of cards
   const cardColumnsClass = cardItems.length === 2 ? "is-half" : "is-one-third";
-  console.log(cardItems);
   return (
     <section className={"cards-block"} style={{ backgroundColor: blockColor }}>
       <div className="section is-flex is-align-items-center">

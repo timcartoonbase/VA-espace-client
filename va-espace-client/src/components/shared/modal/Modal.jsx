@@ -1,48 +1,60 @@
-import { useEffect } from "react";
-import { createPortal } from "react-dom";
+import React, { useState } from "react";
+import "./Modal.css";
 
-const Modal = ({ isOpen, onClose, children }) => {
-  useEffect(() => {
-    if (!isOpen) return;
+const Modal = ({ caseData, onClose }) => {
+  const [index, setIndex] = useState(0);
+  const slides = caseData.slides;
 
-    const handleEsc = (e) => {
-      if (e.key === "Escape") onClose();
-    };
+  return (
+    <div className="modal is-active">
+      <div className="modal-background" onClick={onClose}></div>
 
-    document.addEventListener("keydown", handleEsc);
-    document.body.classList.add("is-clipped");
+      <div className="modal-card cases-modal">
+        {/* Header */}
+        <header className="modal-card-head cases-modal-head">
+          <p className="modal-card-title">{slides[index].title}</p>
+          <button
+            className="delete is-medium cases-modal-close"
+            onClick={onClose}
+          />
+        </header>
 
-    return () => {
-      document.removeEventListener("keydown", handleEsc);
-      document.body.classList.remove("is-clipped");
-    };
-  }, [isOpen, onClose]);
+        {/* Body */}
+        <section className="modal-card-body cases-modal-body">
+          <div className="carousel-container">
+            {/* Left arrow */}
+            {index > 0 && (
+              <button
+                className="carousel-arrow left"
+                onClick={() => setIndex(index - 1)}
+                aria-label="Previous"
+              >
+                ‹
+              </button>
+            )}
 
-  if (!isOpen) return null;
+            {/* Image frame */}
+            <div className="carousel-frame">
+              <img
+                src={`${import.meta.env.BASE_URL}${slides[index].image}`}
+                alt={slides[index].title}
+              />
+            </div>
 
-  return createPortal(
-    <div className={`modal ${isOpen ? "is-active" : ""}`}>
-      <div className="modal-background" onClick={onClose} />
-
-      <div className="modal-content">
-        <div className="box" style={{ maxWidth: "960px", margin: "0 auto" }}>
-          {children}
-        </div>
-      </div>
-
-      {/* <div className="modal-content">
-        <section className="hero is-fullheight is-light">
-          <div className="hero-body">{children}</div>
+            {/* Right arrow */}
+            {index < slides.length - 1 && (
+              <button
+                className="carousel-arrow right"
+                onClick={() => setIndex(index + 1)}
+                aria-label="Next"
+              >
+                ›
+              </button>
+            )}
+          </div>
         </section>
-      </div> */}
-
-      <button
-        className="modal-close is-large"
-        aria-label="close"
-        onClick={onClose}
-      />
-    </div>,
-    document.body
+      </div>
+    </div>
   );
 };
 

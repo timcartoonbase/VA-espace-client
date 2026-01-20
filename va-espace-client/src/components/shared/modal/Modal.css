@@ -8,3 +8,115 @@
     transform: scale(1);
   }
 }
+.modal-card {
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.modal-card-body {
+  padding: 2rem;
+}
+
+/* Modal overrides */
+.cases-modal {
+  --bulma-modal-card-body-background-color: #ffffff;
+  --bulma-modal-card-background-color: #ffffff;
+  --bulma-modal-card-head-background-color: #ffffff;
+  --bulma-modal-card-head-border-bottom-color: #e5e7eb;
+  --bulma-modal-card-title-color: #1f2933;
+  --bulma-modal-content-width: 90vw;
+  --bulma-modal-content-max-width: 1100px;
+}
+
+/* Modal card */
+.cases-modal {
+  width: 90vw;
+  max-width: 1100px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Header */
+.cases-modal-head {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 2rem;
+}
+
+.cases-modal-head .modal-card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Fix Bulma close button */
+.cases-modal-close {
+  background-color: #f2f2f2;
+}
+
+.cases-modal-close::before,
+.cases-modal-close::after {
+  background-color: #333;
+}
+
+/* Body */
+.cases-modal-body {
+  background: white;
+  padding: 2rem;
+}
+
+/* Carousel layout */
+.carousel-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Image frame */
+.carousel-frame {
+  background: #f8f8f8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-frame img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+}
+
+/* Arrows */
+.carousel-arrow {
+  background: #2f7d63;
+  color: white;
+  border: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: #256650;
+  transform: scale(1.05);
+}
+
+/* Positioning via grid, not absolute */
+.carousel-arrow.left {
+  justify-self: start;
+}
+
+.carousel-arrow.right {
+  justify-self: end;
+}

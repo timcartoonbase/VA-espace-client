@@ -3,6 +3,7 @@ import { useState } from "react";
 import Case from "./case/Case";
 import Modal from "../shared/modal/Modal";
 
+import casesData from "../../content/cases.json";
 import CaseImage1 from "../../assets/images/case-card-1.svg";
 import CaseImage2 from "../../assets/images/case-card-2.svg";
 import CaseImage3 from "../../assets/images/case-card-3.svg";
@@ -31,34 +32,64 @@ const CasesBlock = ({ content, casesImage }) => {
           </div>
 
           <div className="columns is-multiline is-variable is-6 mt-6">
+            {/* <Case
+              image={CaseImage1}
+              caseText={content.case_1_title}
+              onClick={() =>
+                setActiveCase({
+                  title: content.case_1_title,
+                  images: [
+                    `${import.meta.env.BASE_URL}/images/case-1-1.png`,
+                    `${import.meta.env.BASE_URL}/images/case-1-2.png`,
+                    `${import.meta.env.BASE_URL}/images/case-1-3.png`,
+                  ],
+                })
+              }
+            /> */}
             <Case
               image={CaseImage1}
               caseText={content.case_1_title}
-              onClick={() => setActiveCase(1)}
+              onClick={() =>
+                setActiveCase({
+                  title: content.case_1_title, // still Supabase
+                  slides: casesData.fr[0].slides, // now JSON
+                })
+              }
             />
             <Case
               image={CaseImage2}
               caseText={content.case_2_title}
-              onClick={() => console.log("Case 2 clicked")}
+              onClick={() =>
+                setActiveCase({
+                  title: content.case_2_title, // still Supabase
+                  slides: casesData.fr[1].slides, // now JSON
+                })
+              }
             />
             <Case
               image={CaseImage3}
               caseText={content.case_3_title}
-              onClick={() => console.log("Case 3 clicked")}
+              onClick={() =>
+                setActiveCase({
+                  title: content.case_3_title, // still Supabase
+                  slides: casesData.fr[2].slides, // now JSON
+                })
+              }
             />
             <Case
               image={CaseImage4}
               caseText={content.case_4_title}
-              onClick={() => console.log("Case 4 clicked")}
+              onClick={() =>
+                setActiveCase({
+                  title: content.case_4_title, // still Supabase
+                  slides: casesData.fr[3].slides, // now JSON
+                })
+              }
             />
           </div>
-          <Modal
-            isOpen={activeCase !== null}
-            onClose={() => setActiveCase(null)}
-          >
-            <h2>Case {activeCase}</h2>
-            <p>Carousel goes here next 👀</p>
-          </Modal>
+          {activeCase && (
+            <Modal caseData={activeCase} onClose={() => setActiveCase(null)} />
+          )}
         </div>
       </div>
     </section>
