@@ -13,10 +13,7 @@ const Modal = ({ caseData, onClose }) => {
         {/* Header */}
         <header className="modal-card-head cases-modal-head">
           <p className="modal-card-title">{slides[index].title}</p>
-          <button
-            className="delete is-medium cases-modal-close"
-            onClick={onClose}
-          />
+          <button className="modal-close is-large" aria-label="close"></button>
         </header>
 
         {/* Body */}
@@ -29,7 +26,7 @@ const Modal = ({ caseData, onClose }) => {
                 onClick={() => setIndex(index - 1)}
                 aria-label="Previous"
               >
-                ‹
+                ←
               </button>
             )}
 
@@ -48,7 +45,7 @@ const Modal = ({ caseData, onClose }) => {
                 onClick={() => setIndex(index + 1)}
                 aria-label="Next"
               >
-                ›
+                →
               </button>
             )}
           </div>
