@@ -1,5 +1,5 @@
 import React from "react";
-import RiveCard from "../rive-card/RiveCard";
+import FlipCard from "../flip-card/FlipCard";
 
 import "./CardsBlock.css";
 
@@ -13,20 +13,27 @@ const CardsBlock = ({
 }) => {
   // Inside your component
   const cardsBlock = content || {};
-
-  // Helper to convert flattened keys into array
   const cardItems = Object.keys(cardsBlock)
     .filter((key) => key.startsWith("card_") && key.endsWith("_title"))
     .map((titleKey) => {
-      const num = titleKey.match(/card_(\d+)_title/)[1];
+      const numMatch = titleKey.match(/card_(\d+)_title/);
+      if (!numMatch) return null;
+      const num = numMatch[1];
+
       return {
-        title: cardsBlock[titleKey],
-        text: cardsBlock[`card_${num}_text`] || "",
+        title: cardsBlock[`card_${num}_title`] || "",
+        subtitle: cardsBlock[`card_${num}_subtitle`] || "",
+        paragraph: cardsBlock[`card_${num}_paragraph`] || "",
+        cta: cardsBlock[`card_${num}_cta`] || "",
+        backParagraph: cardsBlock[`card_${num}_back`] || "",
       };
-    });
+    })
+    .filter(Boolean); // remove nulls
 
   // Determine layout based on number of cards
   const cardColumnsClass = cardItems.length === 2 ? "is-half" : "is-one-third";
+  console.log("Cards content keys:", Object.keys(cardsBlock));
+
   return (
     <section className={"cards-block"} style={{ backgroundColor: blockColor }}>
       <div className="section is-flex is-align-items-center">
@@ -59,16 +66,23 @@ const CardsBlock = ({
                 }`}
                 key={index}
               >
-                <RiveCard
-                  riveFile={
+                <FlipCard
+                  bgImage={
                     isVertical
-                      ? `rives/card-v-${index + 1}.riv`
-                      : `rives/card-h-${index + 1}.riv`
+                      ? `src/assets/images/card-v-${index + 1}.svg`
+                      : `src/assets/images/card-h-${index + 1}.svg`
+                  }
+                  flippedImage={
+                    isVertical
+                      ? `src/assets/images/card-v-back.svg`
+                      : `src/assets/images/card-h-back.svg`
                   }
                   title={card.title}
-                  subtitle={card.subtitle} // optional
-                  //   description={card.text}
-                  isVertical={isVertical}
+                  subtitle={card.subtitle}
+                  paragraph={card.paragraph}
+                  cta={card.cta}
+                  backParagraph={card.backParagraph}
+                  isHorizontal={!isVertical}
                 />
               </div>
             ))}

@@ -1,0 +1,119 @@
+.card-title {
+  font-family: "TheSansB3", system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #3e3e3e;
+}
+
+.card-subtitle {
+  font-family: "TheSansB3", system-ui, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  color: #ffffff;
+}
+
+.back-p {
+  color: #3e3e3e;
+}
+
+.flip-card {
+  width: 100%;
+  aspect-ratio: 302 / 500;
+  position: relative;
+  perspective: 1200px;
+}
+
+.flip-card-h {
+  aspect-ratio: 550 / 432;
+}
+
+.flip-card-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari fix */
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-card-content {
+  position: absolute;
+  inset: 0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  z-index: 1;
+}
+/* Front content at top */
+.flip-card-front .flip-card-content {
+  justify-content: flex-start; /* push content to top */
+  padding: 32px;
+  gap: 8px; /* space between title & subtitle */
+}
+
+/* Back content at top */
+.flip-card-back .flip-card-content {
+  justify-content: flex-start;
+  padding: 32px;
+  gap: 12px; /* space between title & backParagraph */
+}
+.card-title {
+  margin: 0 0 2rem 0;
+}
+.card-title-h {
+  margin: 0 0 0rem 0;
+}
+
+.card-subtitle {
+  margin: 0 0 7rem 0;
+  font-size: 1.1rem;
+}
+
+.card-subtitle-h {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+}
+
+.card-paragraph {
+  margin: 0 0 8px 0;
+}
+
+.card-cta {
+  /* padding: 8px 16px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; */
+}

@@ -31,9 +31,11 @@ const LandingBlock = ({ content, lang, setLang }) => {
             {/* Left Side: Title + CTA */}
             <div className="column is-7 has-text-left">
               <h1>{content?.title}</h1>
-              <div
+              <a
+                href="#linkA"
                 className="button-container"
                 style={{ position: "relative", display: "inline-block" }}
+                onClick={handleScroll}
               >
                 <img
                   src={buttonImage}
@@ -51,10 +53,11 @@ const LandingBlock = ({ content, lang, setLang }) => {
                 <button
                   className="mt-4"
                   style={{ position: "relative", zIndex: "1" }}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {content?.cta}
                 </button>
-              </div>
+              </a>
             </div>
 
             {/* Right Side: Image */}

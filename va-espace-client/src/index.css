@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Fedra B", system-ui, sans-serif;
+  font-family: "TheSansB3", system-ui, sans-serif;
   color: #3e3e3e;
 }
 
@@ -90,7 +90,7 @@ a:hover {
 }
 
 button {
-  font-family: "Fedra B", system-ui, sans-serif;
+  font-family: "TheSansB3", system-ui, sans-serif;
   color: #ffffff;
   background-color: #028141;
   border: #000000 2px solid;

@@ -7,6 +7,7 @@ const HeroBlock = ({
   heroImage,
   imageColSize,
   blockColor,
+  noNum,
   noPad,
 }) => {
   const heroBlock = content || {};
@@ -41,13 +42,22 @@ const HeroBlock = ({
               </figure>
             </div>
 
-            <div className="column">
-              <p className="pb-2">{content.description_1}</p>
+            <div className="column ">
+              <div className="is-flex has-text-left">
+                {!noNum && <span className="li-number">1</span>}
+                <p className="pb-2 li-description">{content.description_1}</p>
+              </div>
               {content.description_2 && (
-                <p className="pb-2">{content.description_2}</p>
+                <div className="is-flex has-text-left">
+                  {!noNum && <span className="li-number">2</span>}
+                  <p className="pb-2 li-description">{content.description_2}</p>
+                </div>
               )}
               {content.description_3 && (
-                <p className="pb-2">{content.description_3}</p>
+                <div className="is-flex has-text-left">
+                  {!noNum && <span className="li-number">3</span>}
+                  <p className="pb-2 li-description">{content.description_3}</p>
+                </div>
               )}
             </div>
           </div>

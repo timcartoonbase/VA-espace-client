@@ -6,3 +6,21 @@
   padding-top: 5rem;
   /* padding-bottom: 8rem; */
 }
+
+.li-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #62aba9;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.li-description {
+  font-size: 0.95rem;
+}

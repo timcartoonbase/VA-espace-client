@@ -12,13 +12,13 @@ const Case = ({ image, caseText, onClick }) => {
         onKeyDown={(e) => e.key === "Enter" && onClick?.()}
       >
         <div
-          className="card-content case-card-content"
+          className="case-card-content"
           style={{
             backgroundImage: `url(${image})`,
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            alignItems: "center",
+            alignItems: "flex-start",
           }}
         >
           <h3 className="caseText">{caseText}</h3>

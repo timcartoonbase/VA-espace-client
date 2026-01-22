@@ -1,5 +1,5 @@
 import React from "react";
-import RiveCard from "../rive-card/RiveCard";
+import FlipCard from "../flip-card/FlipCard";
 
 import VideoThumbnail from "../../assets/images/video-thumbnail.svg";
 import "./CallToActionBlock.css";

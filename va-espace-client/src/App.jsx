@@ -30,7 +30,7 @@ function App() {
       {content["2-cards"] && (
         <CardsBlock
           content={content["2-cards"]}
-          blockColor={"#86bc80"}
+          blockColor={"#6ac39d"}
           isVertical={true}
         />
       )}
@@ -39,7 +39,7 @@ function App() {
           content={content["3-hero"]}
           heroImage={heroImage1}
           imageColSize="is-8"
-          blockColor="#b2d1d2"
+          blockColor="#a1ced6"
         />
       )}
       {content["4-hero"] && (
@@ -48,6 +48,7 @@ function App() {
           titleColor="#de99b5"
           heroImage={heroImage2}
           blockColor="#ffffff"
+          noNum={true}
           noPad={true}
         />
       )}
@@ -74,6 +75,15 @@ function App() {
         titleColSize="small"
       /> */}
       <Footer />
+      {/* <iframe
+        src="https://timcartoonbase.github.io/VA-espace-client/#linkA"
+        style={{
+          width: "100%",
+          aspectRatio: "16 / 9",
+          border: "none",
+        }}
+        title="VA Espace Client Preview"
+      /> */}
     </>
   );
 }

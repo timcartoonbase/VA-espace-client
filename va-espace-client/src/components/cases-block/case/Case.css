@@ -3,7 +3,9 @@
   height: 100%;
   display: flex;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   will-change: transform;
 }
 
@@ -21,11 +23,13 @@
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding: 1.5rem;
+  padding: 1rem;
   position: relative;
 }
 
 .caseText {
   color: #ffffff;
   font-size: 0.9rem;
+  text-align: left;
+  width: 80%;
 }
