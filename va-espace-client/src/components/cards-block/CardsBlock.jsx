@@ -70,7 +70,9 @@ const CardsBlock = ({
                   bgImage={
                     isVertical
                       ? `src/assets/images/card-v-${index + 1}.svg`
-                      : `src/assets/images/card-h-${index + 1}.svg`
+                      : !isVertical && index + 1 === 1
+                        ? `src/assets/images/card-h-${index + 1}.png`
+                        : `src/assets/images/card-h-${index + 1}.svg`
                   }
                   flippedImage={
                     isVertical

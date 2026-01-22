@@ -13,7 +13,11 @@ const Modal = ({ caseData, onClose }) => {
         {/* Header */}
         <header className="modal-card-head cases-modal-head">
           <p className="modal-card-title">{slides[index].title}</p>
-          <button className="modal-close is-large" aria-label="close"></button>
+          <button
+            className="modal-close is-large"
+            aria-label="close"
+            onClick={onClose}
+          ></button>
         </header>
 
         {/* Body */}
