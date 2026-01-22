@@ -27,7 +27,7 @@ const LandingBlock = ({ content, lang, setLang }) => {
         </div>
 
         <div className="container is-fullheight">
-          <div className="columns is-vcentered is-variable is-8 is-flex pl-5">
+          <div className="columns is-vcentered is-variable is-flex pl-5">
             {/* Left Side: Title + CTA */}
             <div className="column is-7 has-text-left">
               <h1>{content?.title}</h1>

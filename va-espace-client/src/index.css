@@ -54,7 +54,8 @@ h4 {
 }
 
 h1 {
-  font-size: 4.5rem;
+  /* font-size: 4.5rem; */
+  font-size: 5vw;
   font-weight: 500;
 }
 

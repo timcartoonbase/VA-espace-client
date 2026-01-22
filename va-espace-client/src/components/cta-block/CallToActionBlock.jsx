@@ -40,7 +40,7 @@ const CallToActionBlock = ({ content }) => {
               <h2 className="has-text-centered mt-4 mb-6">{content.title_2}</h2>
             </div>
           </div>
-          <div className="columns is-flex is-align-items-center is-justify-content-center is-6 mt-2">
+          {/* <div className="columns is-flex is-align-items-center is-justify-content-center is-6 mt-2">
             <div
               className={`column is-4 is-flex is-align-items-center is-justify-content-center`}
             >
@@ -56,7 +56,7 @@ const CallToActionBlock = ({ content }) => {
             >
               <div className="languageBtn">de</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
