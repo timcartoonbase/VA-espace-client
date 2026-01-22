@@ -32,20 +32,6 @@ const CasesBlock = ({ content, casesImage }) => {
           </div>
 
           <div className="columns is-multiline is-variable is-6 mt-6">
-            {/* <Case
-              image={CaseImage1}
-              caseText={content.case_1_title}
-              onClick={() =>
-                setActiveCase({
-                  title: content.case_1_title,
-                  images: [
-                    `${import.meta.env.BASE_URL}/images/case-1-1.png`,
-                    `${import.meta.env.BASE_URL}/images/case-1-2.png`,
-                    `${import.meta.env.BASE_URL}/images/case-1-3.png`,
-                  ],
-                })
-              }
-            /> */}
             <Case
               image={CaseImage1}
               caseText={content.case_1_title}

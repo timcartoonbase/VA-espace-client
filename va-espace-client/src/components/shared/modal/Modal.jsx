@@ -10,15 +10,20 @@ const Modal = ({ caseData, onClose }) => {
       <div className="modal-background" onClick={onClose}></div>
 
       <div className="modal-card cases-modal">
+        <button
+          className="modal-close is-large"
+          aria-label="close"
+          onClick={onClose}
+        ></button>
         {/* Header */}
-        <header className="modal-card-head cases-modal-head">
+        {/* <header className="modal-card-head cases-modal-head">
           <p className="modal-card-title">{slides[index].title}</p>
           <button
             className="modal-close is-large"
             aria-label="close"
             onClick={onClose}
           ></button>
-        </header>
+        </header> */}
 
         {/* Body */}
         <section className="modal-card-body cases-modal-body">
