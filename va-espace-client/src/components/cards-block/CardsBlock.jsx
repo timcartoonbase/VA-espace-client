@@ -1,5 +1,15 @@
 import React from "react";
 import FlipCard from "../flip-card/FlipCard";
+// import FlipCard from "../../assets/images/";
+import cardV1 from "../../assets/images/card-v-1.svg";
+import cardV2 from "../../assets/images/card-v-2.svg";
+import cardV3 from "../../assets/images/card-v-3.svg";
+
+import cardH1 from "../../assets/images/card-h-1.png";
+import cardH2 from "../../assets/images/card-h-2.svg";
+
+import cardVBack from "../../assets/images/card-v-back.svg";
+import cardHBack from "../../assets/images/card-h-back.svg";
 
 import "./CardsBlock.css";
 
@@ -12,6 +22,9 @@ const CardsBlock = ({
   isVertical,
 }) => {
   // Inside your component
+  const verticalImages = [cardV1, cardV2, cardV3];
+  const horizontalImages = [cardH1, cardH2];
+
   const cardsBlock = content || {};
   const cardItems = Object.keys(cardsBlock)
     .filter((key) => key.startsWith("card_") && key.endsWith("_title"))
@@ -68,15 +81,9 @@ const CardsBlock = ({
               >
                 <FlipCard
                   bgImage={
-                    isVertical
-                      ? `src/assets/images/card-v-${index + 1}.svg`
-                      : `src/assets/images/card-h-${index + 1}.svg`
+                    isVertical ? verticalImages[index] : horizontalImages[index]
                   }
-                  flippedImage={
-                    isVertical
-                      ? `src/assets/images/card-v-back.svg`
-                      : `src/assets/images/card-h-back.svg`
-                  }
+                  flippedImage={isVertical ? cardVBack : cardHBack}
                   title={card.title}
                   subtitle={card.subtitle}
                   paragraph={card.paragraph}
