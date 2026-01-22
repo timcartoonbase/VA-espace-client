@@ -1,5 +1,7 @@
 /* src/components/LandingBlock.css */
-
+.landing-container {
+  padding: 0 6rem;
+}
 .landing-block {
   background-color: #ffffff;
   position: relative;
@@ -24,6 +26,12 @@
 
 .landing-image {
   max-width: 100%;
+}
+
+.landing-links {
+  background-color: transparent;
+  border: none;
+  color: #028141;
 }
 
 .button-container {

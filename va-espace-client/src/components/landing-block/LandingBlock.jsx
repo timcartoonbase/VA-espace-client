@@ -4,16 +4,7 @@ import "./LandingBlock.css";
 import heroImage from "../../assets/Images/landing-image.svg";
 import buttonImage from "../../assets/Images/landingBtn.svg";
 
-const LandingBlock = ({ content, lang, setLang }) => {
-  const handleScroll = (e) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute("href");
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+const LandingBlock = ({ content, lang, setLang, onScroll }) => {
   return (
     <section className="landing-block">
       <div className="section">
@@ -27,7 +18,7 @@ const LandingBlock = ({ content, lang, setLang }) => {
         </div>
 
         <div className="container is-fullheight">
-          <div className="columns is-vcentered is-variable is-flex pl-5">
+          <div className="columns is-vcentered is-variable is-flex landing-container">
             {/* Left Side: Title + CTA */}
             <div className="column is-7 has-text-left">
               <h1>{content?.title}</h1>
@@ -35,7 +26,7 @@ const LandingBlock = ({ content, lang, setLang }) => {
                 href="#linkA"
                 className="button-container"
                 style={{ position: "relative", display: "inline-block" }}
-                onClick={handleScroll}
+                // onClick={handleScroll}
               >
                 <img
                   src={buttonImage}
@@ -76,29 +67,27 @@ const LandingBlock = ({ content, lang, setLang }) => {
 
           {/* Bottom Links */}
           <div className="column bottom-links has-text-centered mt-6">
-            <a
-              href="#linkA"
+            <button
               className="landing-links mx-3"
-              onClick={handleScroll}
+              onClick={() => onScroll("2-cards")}
             >
               {content?.link_1}
-            </a>
+            </button>
+
             <span> | </span>
-            <a
-              href="#linkB"
+            <button
               className="landing-links mx-3"
-              onClick={handleScroll}
+              onClick={() => onScroll("3-hero")}
             >
               {content?.link_2}
-            </a>
+            </button>
             <span> | </span>
-            <a
-              href="#linkC"
+            <button
               className="landing-links mx-3"
-              onClick={handleScroll}
+              onClick={() => onScroll("4-hero")}
             >
               {content?.link_3}
-            </a>
+            </button>
           </div>
         </div>
       </div>
