@@ -37,38 +37,49 @@ const CasesBlock = ({ content, casesImage }) => {
               caseText={content.case_1_title}
               onClick={() =>
                 setActiveCase({
-                  title: content.case_1_title, // still Supabase
-                  slides: casesData.fr[0].slides, // now JSON
+                  ...casesData.fr[0],
+                  // combine start + slides into one array for the modal if no paths
+                  slides: casesData.fr[0].paths
+                    ? undefined
+                    : [casesData.fr[0].start, ...casesData.fr[0].slides],
                 })
               }
             />
+
             <Case
               image={CaseImage2}
               caseText={content.case_2_title}
               onClick={() =>
                 setActiveCase({
-                  title: content.case_2_title, // still Supabase
-                  slides: casesData.fr[1].slides, // now JSON
+                  ...casesData.fr[1],
+                  slides: casesData.fr[1].paths
+                    ? undefined
+                    : [casesData.fr[1].start, ...casesData.fr[1].slides],
                 })
               }
             />
+
             <Case
               image={CaseImage3}
               caseText={content.case_3_title}
               onClick={() =>
                 setActiveCase({
-                  title: content.case_3_title, // still Supabase
-                  slides: casesData.fr[2].slides, // now JSON
+                  ...casesData.fr[2],
+                  // for branching case, leave slides undefined; modal will use start + paths
+                  slides: undefined,
                 })
               }
             />
+
             <Case
               image={CaseImage4}
               caseText={content.case_4_title}
               onClick={() =>
                 setActiveCase({
-                  title: content.case_4_title, // still Supabase
-                  slides: casesData.fr[3].slides, // now JSON
+                  ...casesData.fr[3],
+                  slides: casesData.fr[3].paths
+                    ? undefined
+                    : [casesData.fr[3].start, ...casesData.fr[3].slides],
                 })
               }
             />
