@@ -11,8 +11,10 @@ export const useContent = (language) => {
 
       const { data, error } = await supabase
         .from("va_espace_client_content")
-        .select("*");
-      console.log("All rows:", data, "Error:", error);
+        .select("*")
+        .eq("language", language); // ✅ FILTER BY LANGUAGE
+
+      console.log("Language:", language, "Rows:", data);
 
       if (!error && data) {
         const tree = {};
@@ -23,6 +25,8 @@ export const useContent = (language) => {
         });
 
         setContent(tree);
+      } else {
+        setContent({});
       }
 
       setLoading(false);

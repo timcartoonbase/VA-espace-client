@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useContent } from "./hooks/useContent";
 import LandingBlock from "./components/landing-block/LandingBlock";
 import CardsBlock from "./components/cards-block/CardsBlock";
@@ -14,6 +14,9 @@ import casesImage from "./assets/images/cases-image.svg";
 function App() {
   const [lang, setLang] = useState("fr");
   const { content, loading } = useContent(lang);
+  useEffect(() => {
+    console.log("Language changed to:", lang);
+  }, [lang]);
 
   // 🔑 refs for scrolling
   const cardsRef = useRef(null);
