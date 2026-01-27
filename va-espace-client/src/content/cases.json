@@ -3,11 +3,29 @@
     {
       "id": "case_1",
       "start": {
+        "id": "case-1-1",
         "title": "Face à quel cas vous trouvez-vous ?",
-        "image": "images/cases/case-1-1.png"
+        "image": "images/cases/case-1-1.png",
+        "cardsContent": {
+          "title": "",
+          "subtitle": "",
+          "card_1_title": "",
+          "card_1_subtitle": "",
+          "card_1_paragraph": "",
+          "card_1_back": "",
+          "card_2_title": "",
+          "card_2_subtitle": "",
+          "card_2_paragraph": "",
+          "card_2_back": "",
+          "card_3_title": "",
+          "card_3_subtitle": "",
+          "card_3_paragraph": "",
+          "card_3_back": ""
+        }
       },
       "slides": [
         {
+          "id": "case-1-2",
           "title": "Je n’arrive pas à me connecter à mon Espace client",
           "image": "images/cases/case-1-2.png"
         }
@@ -46,11 +64,11 @@
         "image": "images/cases/case-3-1.png",
         "choices": [
           {
-            "label": "Je n’arrive pas à créer mon Espace client",
+            "label": "1",
             "next": "pathA"
           },
           {
-            "label": "J’ai un autre problème",
+            "label": "2",
             "next": "pathB"
           }
         ]

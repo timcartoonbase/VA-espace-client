@@ -10,18 +10,20 @@ const FlipCard = ({
   cta,
   backParagraph,
   isHorizontal = false,
+  isCaseC = false,
 }) => {
   const [flipped, setFlipped] = useState(false);
 
   return (
     <div
-      className={`flip-card ${isHorizontal ? "flip-card-h" : ""} ${
-        flipped ? "flipped" : ""
-      }`}
+      className={`flip-card
+    ${isHorizontal ? "flip-card-h" : ""}
+    ${isCaseC ? "flip-card-c" : ""}
+    ${flipped ? "flipped" : ""}
+  `}
       onClick={() => setFlipped((f) => !f)}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && setFlipped((f) => !f)}
     >
       <div className="flip-card-inner">
         {/* FRONT */}

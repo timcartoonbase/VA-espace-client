@@ -100,3 +100,14 @@
   padding-left: 6%;
   padding-right: 6%;
 }
+/* Case C cards – lock correct aspect ratio */
+.flip-card-c {
+  /* aspect-ratio: 415 / 300; */
+}
+
+/* Ensure images fill the card */
+.flip-card-c .flip-card-image {
+  width: 100%;
+  /* height: 100%; */
+  /* object-fit: cover; */
+}

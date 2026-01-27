@@ -1,21 +1,28 @@
 import React, { useState } from "react";
+import CardsBlock from "../../cards-block/CardsBlock";
 import "./Modal.css";
 
 const Modal = ({ caseData, onClose }) => {
   if (!caseData) return null;
 
-  const isBranchingCase = !!caseData.start && !!caseData.paths;
-
-  const initialSlides = !isBranchingCase ? caseData.slides : [caseData.start];
+  const isBranching = !!caseData.paths; // case 3
+  const initialSlides = !isBranching
+    ? caseData.slides || [caseData.start]
+    : [caseData.start];
 
   const [pathKey, setPathKey] = useState(null);
   const [index, setIndex] = useState(0);
 
+  // Determine active slides
   const slides = pathKey ? caseData.paths[pathKey] : initialSlides;
 
-  const showDecision = isBranchingCase && !pathKey && caseData.start.choices;
+  // Guard: slide might be undefined
+  const currentSlide = slides?.[index];
+  if (!currentSlide) return null;
 
-  if (!slides || slides.length === 0) return null;
+  const showDecision =
+    isBranching && !pathKey && currentSlide.choices?.length > 0;
+  const showArrows = slides.length > 1;
 
   return (
     <div className="modal is-active">
@@ -26,41 +33,61 @@ const Modal = ({ caseData, onClose }) => {
           className="modal-close is-large"
           aria-label="close"
           onClick={onClose}
-        ></button>
+        />
 
         <section className="modal-card-body cases-modal-body">
           <div className="carousel-container">
             {/* LEFT ARROW */}
-            {index > 0 && (
+            {showArrows && index > 0 && (
               <button
                 className="carousel-arrow left"
                 onClick={() => setIndex((i) => i - 1)}
-                aria-label="Previous"
               >
                 ←
               </button>
             )}
 
-            {/* IMAGE FRAME */}
-            <div className="carousel-frame">
-              {/* Slide Title Overlay */}
-              <div className="carousel-title is-align-items-center">
-                {slides[index].title}
-              </div>
+            {/* IMAGE + TITLE + CARDS */}
+            <div className="carousel-frame" style={{ position: "relative" }}>
+              {currentSlide.title && (
+                <div className="carousel-title">{currentSlide.title}</div>
+              )}
 
-              {/* Slide Image */}
               <img
-                src={`${import.meta.env.BASE_URL}${slides[index].image}`}
-                alt={slides[index].title}
+                src={`${import.meta.env.BASE_URL}${currentSlide.image}`}
+                alt={currentSlide.title || ""}
+                style={{ display: "block", width: "100%" }}
               />
+
+              {/* Cards overlay */}
+              {currentSlide.cardsContent && (
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "20px", // adjust distance from bottom
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "90%", // adjust width
+                    zIndex: 10,
+                  }}
+                >
+                  <CardsBlock
+                    content={currentSlide.cardsContent}
+                    isVertical
+                    titleSize="small"
+                    isCaseC={true}
+                  />
+                </div>
+              )}
 
               {/* DECISION BUTTONS */}
               {showDecision && (
                 <div className="decision-buttons">
-                  {caseData.start.choices.map((choice) => (
+                  {currentSlide.choices.map((choice, idx) => (
                     <button
                       key={choice.next}
                       className="decision-btn"
+                      style={idx === 1 ? { transform: "translateY(40%)" } : {}}
                       onClick={() => {
                         setPathKey(choice.next);
                         setIndex(0);
@@ -74,11 +101,10 @@ const Modal = ({ caseData, onClose }) => {
             </div>
 
             {/* RIGHT ARROW */}
-            {index < slides.length - 1 && (
+            {showArrows && index < slides.length - 1 && (
               <button
                 className="carousel-arrow right"
                 onClick={() => setIndex((i) => i + 1)}
-                aria-label="Next"
               >
                 →
               </button>

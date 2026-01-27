@@ -35,15 +35,15 @@ const CasesBlock = ({ content, casesImage }) => {
             <Case
               image={CaseImage1}
               caseText={content.case_1_title}
-              onClick={() =>
+              onClick={() => {
+                const caseData = casesData.fr[0];
                 setActiveCase({
-                  ...casesData.fr[0],
-                  // combine start + slides into one array for the modal if no paths
-                  slides: casesData.fr[0].paths
-                    ? undefined
-                    : [casesData.fr[0].start, ...casesData.fr[0].slides],
-                })
-              }
+                  ...caseData,
+                  slides: caseData.slides
+                    ? [caseData.start, ...caseData.slides]
+                    : [caseData.start],
+                });
+              }}
             />
 
             <Case
