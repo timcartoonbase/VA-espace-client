@@ -4,8 +4,9 @@
   font-weight: 700;
   margin: 0;
   color: #3e3e3e;
-  padding-bottom: 4vw;
+  padding-bottom: 2vw;
 }
+
 .card-subtitle {
   font-family: "TheSansB3", system-ui, sans-serif;
   font-size: 1.2rem;
@@ -14,11 +15,18 @@
   color: #ffffff;
   padding-bottom: 11vw;
 }
+
 .card-title-h {
   padding-bottom: 0vw;
 }
+
+.card-paragraph {
+  white-space: pre-line;
+}
+
 .back-p {
   color: #3e3e3e;
+  white-space: pre-line;
 }
 .flip-card-back-overlay {
   position: absolute;
