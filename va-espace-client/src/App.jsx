@@ -7,13 +7,23 @@ import CasesBlock from "./components/cases-block/CasesBlock";
 import CallToActionBlock from "./components/cta-block/CallToActionBlock";
 import Footer from "./components/footer/Footer";
 
+// 🇫🇷 FR (default)
 import heroImage1 from "./assets/images/hero-image-1.svg";
 import heroImage2 from "./assets/images/hero-image-2.svg";
 import casesImage from "./assets/images/cases-image.svg";
 
+// 🇩🇪 DE
+import heroImage1de from "./assets/images/hero-image-1-de.svg";
+import casesImagede from "./assets/images/cases-image-de.svg";
+
+// 🇮🇹 IT
+import heroImage1it from "./assets/images/hero-image-1-it.svg";
+import casesImageit from "./assets/images/cases-image-it.svg";
+
 function App() {
   const [lang, setLang] = useState("fr");
   const { content, loading } = useContent(lang);
+
   useEffect(() => {
     console.log("Language changed to:", lang);
   }, [lang]);
@@ -36,6 +46,19 @@ function App() {
     });
   };
 
+  // 🌍 Language → image mapping
+  const hero1ByLang = {
+    fr: heroImage1,
+    de: heroImage1de,
+    it: heroImage1it,
+  };
+
+  const casesImageByLang = {
+    fr: casesImage,
+    de: casesImagede,
+    it: casesImageit,
+  };
+
   if (loading) return <div>Loading…</div>;
 
   return (
@@ -45,7 +68,7 @@ function App() {
           content={content["1-landing"]}
           lang={lang}
           setLang={setLang}
-          onScroll={handleScroll} // 👈 pass it down
+          onScroll={handleScroll}
         />
       )}
 
@@ -54,7 +77,7 @@ function App() {
           <CardsBlock
             content={content["2-cards"]}
             blockColor="#6ac39d"
-            isVertical={true}
+            isVertical
           />
         </div>
       )}
@@ -63,7 +86,7 @@ function App() {
         <div ref={hero3Ref}>
           <HeroBlock
             content={content["3-hero"]}
-            heroImage={heroImage1}
+            heroImage={hero1ByLang[lang] ?? heroImage1}
             imageColSize="is-8"
             blockColor="#a1ced6"
           />
@@ -77,8 +100,8 @@ function App() {
             titleColor="#de99b5"
             heroImage={heroImage2}
             blockColor="#ffffff"
-            noNum={true}
-            noPad={true}
+            noNum
+            noPad
           />
         </div>
       )}
@@ -92,10 +115,16 @@ function App() {
       )}
 
       {content["6-cases"] && (
-        <CasesBlock content={content["6-cases"]} casesImage={casesImage} />
+        <CasesBlock
+          content={content["6-cases"]}
+          casesImage={casesImageByLang[lang] ?? casesImage}
+          lang={lang}
+        />
       )}
 
-      {content["7-cta"] && <CallToActionBlock content={content["7-cta"]} />}
+      {content["7-cta"] && (
+        <CallToActionBlock content={content["7-cta"]} lang={lang} />
+      )}
 
       <Footer />
     </>

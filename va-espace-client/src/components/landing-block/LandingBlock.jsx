@@ -57,7 +57,7 @@ const LandingBlock = ({ content, lang, setLang, onScroll }) => {
                 />
 
                 <button
-                  className="mt-4"
+                  className="mt-4 landing-cta"
                   style={{ position: "relative", zIndex: "1" }}
                   onClick={(e) => e.stopPropagation()}
                 >

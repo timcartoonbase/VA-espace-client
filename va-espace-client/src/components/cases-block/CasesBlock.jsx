@@ -10,8 +10,9 @@ import CaseImage3 from "../../assets/images/case-card-3.svg";
 import CaseImage4 from "../../assets/images/case-card-4.svg";
 import "./CasesBlock.css";
 
-const CasesBlock = ({ content, casesImage }) => {
+const CasesBlock = ({ content, casesImage, lang = "fr" }) => {
   const [activeCase, setActiveCase] = useState(null);
+  console.log(lang);
 
   return (
     <section className="cases-block mb-6">
@@ -36,7 +37,7 @@ const CasesBlock = ({ content, casesImage }) => {
               image={CaseImage1}
               caseText={content.case_1_title}
               onClick={() => {
-                const caseData = casesData.fr[0];
+                const caseData = casesData[lang][0];
                 setActiveCase({
                   ...caseData,
                   slides: caseData.slides
@@ -51,10 +52,10 @@ const CasesBlock = ({ content, casesImage }) => {
               caseText={content.case_2_title}
               onClick={() =>
                 setActiveCase({
-                  ...casesData.fr[1],
-                  slides: casesData.fr[1].paths
+                  ...casesData[lang][1],
+                  slides: casesData[lang][1].paths
                     ? undefined
-                    : [casesData.fr[1].start, ...casesData.fr[1].slides],
+                    : [casesData[lang][1].start, ...casesData[lang][1].slides],
                 })
               }
             />
@@ -64,7 +65,7 @@ const CasesBlock = ({ content, casesImage }) => {
               caseText={content.case_3_title}
               onClick={() =>
                 setActiveCase({
-                  ...casesData.fr[2],
+                  ...casesData[lang][2],
                   // for branching case, leave slides undefined; modal will use start + paths
                   slides: undefined,
                 })
@@ -76,10 +77,10 @@ const CasesBlock = ({ content, casesImage }) => {
               caseText={content.case_4_title}
               onClick={() =>
                 setActiveCase({
-                  ...casesData.fr[3],
-                  slides: casesData.fr[3].paths
+                  ...casesData[lang][3],
+                  slides: casesData[lang][3].paths
                     ? undefined
-                    : [casesData.fr[3].start, ...casesData.fr[3].slides],
+                    : [casesData[lang][3].start, ...casesData[lang][3].slides],
                 })
               }
             />

@@ -42,6 +42,12 @@ const CardsBlock = ({
       ? [cardVBack, cardVBack, cardVBack]
       : [cardHBack, cardHBack];
 
+  // NEW: safe accessor to avoid undefined images and ensure layout stability
+  const getImage = (arr, idx) => {
+    if (!arr || arr.length === 0) return null;
+    return arr[idx] ?? arr[arr.length - 1];
+  };
+
   // Prepare cards from content
   const cardsBlock = content || {};
   const cardItems = Object.keys(cardsBlock)
@@ -66,7 +72,10 @@ const CardsBlock = ({
   console.log("DEBUG: CardsBlock content:", content);
 
   return (
-    <section className={"cards-block"} style={{ backgroundColor: blockColor }}>
+    <section
+      className={`cards-block ${isCaseC ? "cards-block-c" : ""}`}
+      style={{ backgroundColor: blockColor }}
+    >
       <div className="section is-flex is-align-items-center">
         <div className="container">
           <div className="columns is-flex is-align-items-center is-justify-content-center mb-4">
@@ -86,26 +95,54 @@ const CardsBlock = ({
             <p className="is-10 has-text-centered">{content.subtitle}</p>
           )}
           <div className="columns is-variable mt-6">
-            {cardItems.map((card, index) => (
-              <div
-                className={`column ${cardItems.length === 2 ? "is-half" : "is-one-third"}`}
-                key={index}
-              >
-                <FlipCard
-                  bgImage={
-                    isVertical ? verticalImages[index] : horizontalImages[index]
+            {cardItems.map((card, index) => {
+              // compute equal column widths reliably
+              const isTwo = cardItems.length === 2;
+              const widthStyle = isTwo
+                ? { flex: "0 0 50%", maxWidth: "50%" }
+                : { flex: "0 0 33.3333%", maxWidth: "33.3333%" };
+
+              return (
+                <div
+                  className={`column ${isTwo ? "is-half" : "is-one-third"}`}
+                  key={index}
+                  // allow overflow for case C so transformed/positioned children aren't clipped
+                  style={
+                    isCaseC
+                      ? {
+                          ...widthStyle,
+                          overflow: "visible",
+                          position: "relative",
+                          // make the rightmost card render above neighbours to avoid sibling clipping
+                          zIndex: index === cardItems.length - 1 ? 2 : 1,
+                        }
+                      : undefined
                   }
-                  flippedImage={flippedImages[index]}
-                  title={card.title}
-                  subtitle={card.subtitle}
-                  paragraph={card.paragraph}
-                  cta={card.cta}
-                  backParagraph={card.backParagraph}
-                  isHorizontal={!isVertical}
-                  isCaseC={isCaseC}
-                />
-              </div>
-            ))}
+                >
+                  {/* wrapper ensures the FlipCard fills its column */}
+                  <div
+                    className="card-wrapper"
+                    style={{ width: "100%", height: "100%" }}
+                  >
+                    <FlipCard
+                      // use safe accessor so we always pass a valid image
+                      bgImage={getImage(
+                        isVertical ? verticalImages : horizontalImages,
+                        index,
+                      )}
+                      flippedImage={getImage(flippedImages, index)}
+                      title={card.title}
+                      subtitle={card.subtitle}
+                      paragraph={card.paragraph}
+                      cta={card.cta}
+                      backParagraph={card.backParagraph}
+                      isHorizontal={!isVertical}
+                      isCaseC={isCaseC}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

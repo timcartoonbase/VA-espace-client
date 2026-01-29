@@ -59,7 +59,7 @@ const FlipCard = ({
           <div className="flip-card-back-overlay">
             <h2 className="card-title">{title}</h2>
             {backParagraph && (
-              <p className="back-p has-text-left">{backParagraph}</p>
+              <p className={`back-p ${isHorizontal ? "back-p-h" : ""} has-text-left`}>{backParagraph}</p>
             )}
           </div>
         </div>

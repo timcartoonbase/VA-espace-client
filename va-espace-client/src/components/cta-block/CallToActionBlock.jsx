@@ -4,7 +4,7 @@ import FlipCard from "../flip-card/FlipCard";
 import VideoThumbnail from "../../assets/images/video-thumbnail.svg";
 import "./CallToActionBlock.css";
 
-const CallToActionBlock = ({ content }) => {
+const CallToActionBlock = ({ content, lang }) => {
   // Inside your component
   const cardsBlock = content || {};
 
@@ -37,7 +37,19 @@ const CallToActionBlock = ({ content }) => {
           </div>
           <div className="columns is-flex is-align-items-center is-justify-content-center">
             <div className="">
-              <h2 className="has-text-centered mt-4 mb-6">{content.title_2}</h2>
+              <a
+                href={
+                  lang === "fr"
+                    ? "https://www.vaudoise.ch/fr/particulier/votre-espace-client#faq"
+                    : lang === "de"
+                      ? "https://www.vaudoise.ch/de/privatperson/kundenbereich#faq"
+                      : "https://www.vaudoise.ch/it/privati/la-vostra-area-clienti#faq"
+                }
+              >
+                <h2 className="has-text-centered mt-4 mb-6">
+                  {content.title_2}
+                </h2>
+              </a>
             </div>
           </div>
           {/* <div className="columns is-flex is-align-items-center is-justify-content-center is-6 mt-2">

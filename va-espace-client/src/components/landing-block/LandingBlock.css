@@ -9,6 +9,10 @@
   padding-bottom: 2rem;
 }
 
+.landing-cta {
+  min-width: 220px;
+}
+
 .languages {
   position: absolute;
   top: 2rem;

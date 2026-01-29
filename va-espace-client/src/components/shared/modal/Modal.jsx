@@ -53,21 +53,22 @@ const Modal = ({ caseData, onClose }) => {
                 <div className="carousel-title">{currentSlide.title}</div>
               )}
 
-              <img
-                src={`${import.meta.env.BASE_URL}${currentSlide.image}`}
-                alt={currentSlide.title || ""}
-                style={{ display: "block", width: "100%" }}
-              />
+              <div className="case-image-wrapper">
+                <img
+                  src={`${import.meta.env.BASE_URL}${currentSlide.image}`}
+                  alt={currentSlide.title || ""}
+                />
+              </div>
 
               {/* Cards overlay */}
               {currentSlide.cardsContent && (
                 <div
                   style={{
                     position: "absolute",
-                    bottom: "20px", // adjust distance from bottom
+                    bottom: "0px", // adjust distance from bottom
                     left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "90%", // adjust width
+                    transform: "translateX(-50%) translateY(4%)",
+                    width: "75%", // adjust width
                     zIndex: 10,
                   }}
                 >
