@@ -79,12 +79,13 @@ a {
   font-family: "TheSansB3", system-ui, sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 /* 4. Links */
 a {
-  color: #3273dc; /* Bulma primary */
-  text-decoration: none;
+  /* color: #3273dc; */
+  text-decoration: none !important;
 }
 
 a:hover {

@@ -69,8 +69,6 @@ const CardsBlock = ({
 
   if (cardItems.length === 0) return null;
 
-  console.log("DEBUG: CardsBlock content:", content);
-
   return (
     <section
       className={`cards-block ${isCaseC ? "cards-block-c" : ""}`}

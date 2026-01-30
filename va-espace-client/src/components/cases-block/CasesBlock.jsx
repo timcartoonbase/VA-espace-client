@@ -12,7 +12,13 @@ import "./CasesBlock.css";
 
 const CasesBlock = ({ content, casesImage, lang = "fr" }) => {
   const [activeCase, setActiveCase] = useState(null);
-  console.log(lang);
+  const openCase3 = () => {
+    const case3Data = casesData[lang][2]; // index 2 = Case 3
+    setActiveCase({
+      ...case3Data,
+      slides: undefined, // branching case
+    });
+  };
 
   return (
     <section className="cases-block mb-6">
@@ -53,6 +59,7 @@ const CasesBlock = ({ content, casesImage, lang = "fr" }) => {
               onClick={() =>
                 setActiveCase({
                   ...casesData[lang][1],
+                  caseIndex: 1, // 👈 ADD THIS
                   slides: casesData[lang][1].paths
                     ? undefined
                     : [casesData[lang][1].start, ...casesData[lang][1].slides],
@@ -86,7 +93,12 @@ const CasesBlock = ({ content, casesImage, lang = "fr" }) => {
             />
           </div>
           {activeCase && (
-            <Modal caseData={activeCase} onClose={() => setActiveCase(null)} />
+            <Modal
+              caseData={activeCase}
+              onClose={() => setActiveCase(null)}
+              lang={lang}
+              openCase3={openCase3}
+            />
           )}
         </div>
       </div>

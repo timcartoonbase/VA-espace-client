@@ -57,9 +57,15 @@ const FlipCard = ({
           <img src={flippedImage} alt="" className="flip-card-image" />
 
           <div className="flip-card-back-overlay">
-            <h2 className="card-title">{title}</h2>
+            <h2 className={`card-title ${isHorizontal ? "card-title-h" : ""}`}>
+              {title}
+            </h2>
             {backParagraph && (
-              <p className={`back-p ${isHorizontal ? "back-p-h" : ""} has-text-left`}>{backParagraph}</p>
+              <p
+                className={`back-p ${isHorizontal ? "back-p-h" : ""} has-text-left`}
+              >
+                {backParagraph}
+              </p>
             )}
           </div>
         </div>

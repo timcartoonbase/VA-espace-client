@@ -177,7 +177,7 @@
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(10%) translateY(-790%);
+  transform: translateX(10%) translateY(-25vh);
 
   display: flex;
   gap: 18rem;
@@ -244,4 +244,49 @@
   padding: 8px 12px;
   border-radius: 8px;
   z-index: 2;
+}
+
+.case-open-btn {
+  margin-top: 12px;
+  padding: 0.6rem 1.2rem;
+
+  background: #2f7d63;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.case-open-btn:hover {
+  background: #256650;
+  transform: translateY(-1px);
+}
+
+.case-close-btn {
+  position: absolute;
+  bottom: 8px; /* very low */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* background: transparent;
+  border: none;
+  color: #3e3e3e; */
+
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+  /* opacity: 0.75;s */
+
+  z-index: 20;
+}
+
+.case-close-btn:hover {
+  opacity: 1;
 }

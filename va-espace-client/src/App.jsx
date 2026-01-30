@@ -24,9 +24,7 @@ function App() {
   const [lang, setLang] = useState("fr");
   const { content, loading } = useContent(lang);
 
-  useEffect(() => {
-    console.log("Language changed to:", lang);
-  }, [lang]);
+  useEffect(() => {}, [lang]);
 
   // 🔑 refs for scrolling
   const cardsRef = useRef(null);

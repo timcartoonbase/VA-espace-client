@@ -2,28 +2,50 @@ import React, { useState } from "react";
 import CardsBlock from "../../cards-block/CardsBlock";
 import "./Modal.css";
 
-const Modal = ({ caseData, onClose }) => {
+// Add `openCase3` as a prop
+const Modal = ({ caseData, onClose, lang, openCase3 }) => {
   if (!caseData) return null;
 
-  const isBranching = !!caseData.paths; // case 3
-  // const isShowCas3Btn = caseData.showCas3Btn;
+  const isBranching = !!caseData.paths;
   const initialSlides = !isBranching
     ? caseData.slides || [caseData.start]
     : [caseData.start];
 
   const [pathKey, setPathKey] = useState(null);
   const [index, setIndex] = useState(0);
+  const [history, setHistory] = useState([]);
 
-  // Determine active slides
+  // ✅ NOW index exists
+  const isCase2 = caseData.caseIndex === 1;
+  const showCase3Button = isCase2 && index === 3;
+
   const slides = pathKey ? caseData.paths[pathKey] : initialSlides;
-
-  // Guard: slide might be undefined
   const currentSlide = slides?.[index];
   if (!currentSlide) return null;
 
   const showDecision =
     isBranching && !pathKey && currentSlide.choices?.length > 0;
-  const showArrows = slides.length > 1;
+  const showArrows = slides.length > 1 || history.length > 0;
+
+  const goNext = () => {
+    if (index < slides.length - 1) setIndex((i) => i + 1);
+  };
+
+  const goPrev = () => {
+    if (index > 0) setIndex((i) => i - 1);
+    else if (history.length > 0) {
+      const last = history[history.length - 1];
+      setHistory((h) => h.slice(0, -1));
+      setPathKey(last.pathKey);
+      setIndex(last.index);
+    }
+  };
+
+  const chooseDecision = (choice) => {
+    setHistory((h) => [...h, { pathKey, index }]);
+    setPathKey(choice.next);
+    setIndex(0);
+  };
 
   return (
     <div className="modal is-active">
@@ -39,11 +61,8 @@ const Modal = ({ caseData, onClose }) => {
         <section className="modal-card-body cases-modal-body">
           <div className="carousel-container">
             {/* LEFT ARROW */}
-            {showArrows && index > 0 && (
-              <button
-                className="carousel-arrow left"
-                onClick={() => setIndex((i) => i - 1)}
-              >
+            {showArrows && (index > 0 || history.length > 0) && (
+              <button className="carousel-arrow left" onClick={goPrev}>
                 ←
               </button>
             )}
@@ -66,10 +85,10 @@ const Modal = ({ caseData, onClose }) => {
                 <div
                   style={{
                     position: "absolute",
-                    bottom: "0px", // adjust distance from bottom
+                    bottom: "15%",
                     left: "50%",
-                    transform: "translateX(-50%) translateY(4%)",
-                    width: "75%", // adjust width
+                    transform: "translateX(-50%) translateY(0%)",
+                    width: "90%",
                     zIndex: 10,
                   }}
                 >
@@ -77,7 +96,7 @@ const Modal = ({ caseData, onClose }) => {
                     content={currentSlide.cardsContent}
                     isVertical
                     titleSize="small"
-                    isCaseC={true}
+                    isCaseC
                   />
                 </div>
               )}
@@ -85,43 +104,38 @@ const Modal = ({ caseData, onClose }) => {
               {/* DECISION BUTTONS */}
               {showDecision && (
                 <div className="decision-buttons">
-                  {currentSlide.choices.map((choice, idx) => (
+                  {currentSlide.choices.map((choice) => (
                     <button
-                      key={choice.next}
                       className="decision-btn"
-                      style={idx === 1 ? { transform: "translateY(40%)" } : {}}
-                      onClick={() => {
-                        setPathKey(choice.next);
-                        setIndex(0);
-                      }}
+                      key={choice.next}
+                      onClick={() => chooseDecision(choice)}
                     >
                       {choice.label}
                     </button>
                   ))}
                 </div>
               )}
-            </div>
 
-            {/* {showCas3Btn && (
-              <div className="case3-button-container">
+              {/* NEW: Case 3 button on slide 2-4 */}
+              {showCase3Button && openCase3 && (
                 <button
-                  className="case3-start-btn"
-                  onClick={() => {
-                    setPathKey("optionA");
-                    setIndex(0);
+                  className="case3-open-btn"
+                  style={{
+                    position: "absolute",
+                    bottom: "10px",
+                    right: "10px",
+                    zIndex: 20,
                   }}
+                  onClick={openCase3}
                 >
-                  Start Case 3 - Option A
+                  Case 3
                 </button>
-              </div>
-            )} */}
+              )}
+            </div>
 
             {/* RIGHT ARROW */}
             {showArrows && index < slides.length - 1 && (
-              <button
-                className="carousel-arrow right"
-                onClick={() => setIndex((i) => i + 1)}
-              >
+              <button className="carousel-arrow right" onClick={goNext}>
                 →
               </button>
             )}

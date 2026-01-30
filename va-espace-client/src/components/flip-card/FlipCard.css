@@ -4,7 +4,7 @@
   font-weight: 700;
   margin: 0;
   color: #3e3e3e;
-  padding-bottom: clamp(12px, 2vw, 24px);
+  padding-bottom: clamp(4rem, 2vw, 8rem);
 }
 
 .card-subtitle {
@@ -13,15 +13,7 @@
   font-weight: 400;
   margin: 0;
   color: #ffffff;
-  padding-bottom: clamp(40px, 11vw, 80px);
-}
-
-.card-title-h {
-  padding-bottom: 0;
-}
-
-.card-paragraph {
-  white-space: pre-line;
+  padding-bottom: clamp(4rem, 11vw, 9rem);
 }
 
 .back-p {
@@ -30,20 +22,47 @@
   font-size: clamp(0.75rem, 1.5vw, 1.1rem);
 }
 
+.back-p-h {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
 @media (min-width: 768px) and (max-width: 1300px) {
+  .card-title {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding-bottom: clamp(1rem, 2vw, 3rem);
+  }
+
+  .card-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    padding-bottom: clamp(2rem, 11vw, 7rem);
+  }
   .back-p {
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 767px) {
+  .card-title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    /* min → preferred → max */
+    padding-bottom: clamp(4rem, 4vw, 8rem);
+  }
+
+  .card-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    padding-bottom: clamp(0.8rem, 11vw, 1rem);
+  }
   .back-p {
     font-size: 1rem;
   }
 }
 
-.back-p-h {
-  font-size: clamp(0.9rem, 1.5vw, 0.9rem);
+.card-title-h {
+  padding-bottom: 0;
+}
+
+.card-paragraph {
+  white-space: pre-line;
 }
 
 .flip-card-back-overlay {
@@ -123,9 +142,9 @@
 }
 
 .flip-card-h .flip-card-overlay {
-  padding-top: 8%;
-  padding-left: 6%;
-  padding-right: 6%;
+  padding-top: 6%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 /* Case C cards – lock correct aspect ratio */
@@ -147,4 +166,200 @@
   max-width: none !important;
   max-height: none !important;
   /* object-fit: cover; */
+}
+
+.card-title {
+  font-family: "TheSansB3", system-ui, sans-serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: #3e3e3e;
+  padding-bottom: clamp(4rem, 2vw, 8rem);
+}
+
+.card-subtitle {
+  font-family: "TheSansB3", system-ui, sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-weight: 400;
+  margin: 0;
+  color: #ffffff;
+  padding-bottom: clamp(4rem, 11vw, 9rem);
+}
+
+.back-p {
+  color: #3e3e3e;
+  white-space: pre-line;
+  font-size: clamp(0.75rem, 1.5vw, 1.1rem);
+}
+
+.back-p-h {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .card-title {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding-bottom: clamp(1rem, 2vw, 3rem);
+  }
+
+  .card-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    padding-bottom: clamp(2rem, 11vw, 7rem);
+  }
+  .back-p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    /* min → preferred → max */
+    padding-bottom: clamp(4rem, 4vw, 8rem);
+  }
+
+  .card-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    padding-bottom: clamp(0.8rem, 11vw, 1rem);
+  }
+  .back-p {
+    font-size: 1rem;
+  }
+}
+
+.card-title-h {
+  padding-bottom: 0;
+}
+
+.card-paragraph {
+  white-space: pre-line;
+}
+
+.flip-card-back-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  justify-content: flex-start;
+  color: #3e3e3e;
+  z-index: 1;
+}
+
+.flip-card {
+  width: 100%;
+  aspect-ratio: 302 / 500;
+  position: relative;
+  perspective: 1200px;
+}
+
+.flip-card-h {
+  aspect-ratio: 550 / 432;
+}
+
+.flip-card-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  /* 🔑 Image-relative positioning */
+  padding-top: 12%;
+  padding-left: 8%;
+  padding-right: 8%;
+
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+.flip-card-h .flip-card-overlay {
+  padding-top: 6%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+/* Case C cards – lock correct aspect ratio */
+.flip-card-c {
+  aspect-ratio: 415 / 300;
+}
+
+/* Ensure images fill the card */
+.flip-card-c .flip-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 🔒 FORCE images to respect card aspect ratio */
+.flip-card img,
+.flip-card-c img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  /* object-fit: cover; */
+}
+
+/* ================= FLIP CARD HOVER ================= */
+
+/* Desktop / trackpad only */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card {
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+    will-change: transform;
+  }
+
+  .flip-card:hover {
+    transform: translateY(-6px) scale(1);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0);
+  }
+
+  /* Image polish */
+  .flip-card-image {
+    transition: transform 0.45s ease;
+  }
+
+  .flip-card:hover .flip-card-image {
+    transform: scale(1);
+  }
 }

@@ -4,7 +4,7 @@
       "id": "case_1",
       "start": {
         "id": "case-1-1",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Regardez dans la section « délégations Espace client Vaudoise »",
         "image": "images/cases/case-1-1.png",
         "cardsContent": {
           "title": "",
@@ -26,7 +26,7 @@
       "slides": [
         {
           "id": "case-1-2",
-          "title": "Je n’arrive pas à me connecter à mon Espace client",
+          "title": "Le problème persiste ? Ouvrez un ticket Easyvista.",
           "image": "images/cases/case-1-2.png"
         }
       ]
@@ -34,24 +34,24 @@
     {
       "id": "case_2",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Comment accompagner ? Étape 1",
         "image": "images/cases/case-2-1.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Comment accompagner ? Étape 2",
           "image": "images/cases/case-2-2.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Comment accompagner ? Étape 3",
           "image": "images/cases/case-2-3.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Comment accompagner ? Étape 4",
           "image": "images/cases/case-2-4.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Le problème persiste ? Ouvrez un ticket Easyvista.",
           "image": "images/cases/case-2-5.png"
         }
       ]
@@ -60,7 +60,7 @@
       "id": "case_3",
       "start": {
         "id": "start",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Face à quel cas vous trouvez vous ?",
         "image": "images/cases/case-3-1.png",
         "choices": [
           {
@@ -76,45 +76,45 @@
       "paths": {
         "pathA": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 1. L’écran avec « Vaudoise et mon prénom » en haut",
             "image": "images/cases/case-3-2A.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 1. L’écran avec « Vaudoise et mon prénom » en haut",
             "image": "images/cases/case-3-3A.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 1. L’écran avec « Vaudoise et mon prénom » en haut",
             "image": "images/cases/case-3-4A.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 1. L’écran avec « Vaudoise et mon prénom » en haut",
             "image": "images/cases/case-3-5A.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 1. L’écran avec « Vaudoise et mon prénom » en haut",
             "image": "images/cases/case-3-6A.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Le problème persiste ? Ouvrez un ticket Easyvista.",
             "image": "images/cases/case-3-7A.png"
           }
         ],
         "pathB": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 2. L'écran affiche « Vaudoise et mon prénom » en haut et un bloc « Demande en cours ».",
             "image": "images/cases/case-3-2B.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 2. L'écran affiche « Vaudoise et mon prénom » en haut et un bloc « Demande en cours ».",
             "image": "images/cases/case-3-3B.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Cas 2. L'écran affiche « Vaudoise et mon prénom » en haut et un bloc « Demande en cours ».",
             "image": "images/cases/case-3-4B.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Le problème persiste ? Ouvrez un ticket Easyvista.",
             "image": "images/cases/case-3-5B.png"
           }
         ]
@@ -123,21 +123,17 @@
     {
       "id": "case_4",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Aller dans la section « Délégation Espace client Vaudoise » ",
         "image": "images/cases/case-4-1.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Contrôlez les informations personnelles",
           "image": "images/cases/case-4-2.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Le problème persiste ? Ouvrez un ticket Easyvista.",
           "image": "images/cases/case-4-3.png"
-        },
-        {
-          "title": "Je n’arrive pas à créer mon Espace client",
-          "image": "images/cases/case-4-4.png"
         }
       ]
     }
@@ -147,7 +143,7 @@
       "id": "case_1",
       "start": {
         "id": "case-1-1",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Schauen Sie im Bereich «Delegationen Vaudoise-Kundenportal».",
         "image": "images/cases/case-1-1-de.png",
         "cardsContent": {
           "title": "",
@@ -169,7 +165,7 @@
       "slides": [
         {
           "id": "case-1-2",
-          "title": "Je n’arrive pas à me connecter à mon Espace client",
+          "title": "Eröffnen Sie ein EasyVista-Ticket, wenn das Problem weiterhin besteht.",
           "image": "images/cases/case-1-2-de.png"
         }
       ]
@@ -177,25 +173,25 @@
     {
       "id": "case_2",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Wie Sie helfen können? Schritt 1",
         "image": "images/cases/case-2-1-de.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Wie Sie helfen können? Schritt 2",
           "image": "images/cases/case-2-2-de.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Wie Sie helfen können? Schritt 3",
           "image": "images/cases/case-2-3-de.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Wie Sie helfen können? Schritt 4",
           "image": "images/cases/case-2-4-de.png",
           "showCas3Btn": true
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Eröffnen Sie ein EasyVista-Ticket, wenn das Problem weiterhin besteht.",
           "image": "images/cases/case-2-5-de.png"
         }
       ]
@@ -204,15 +200,15 @@
       "id": "case_3",
       "start": {
         "id": "start",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Welches Anliegen hat der Kunde oder die Kundin?",
         "image": "images/cases/case-3-1-de.png",
         "choices": [
           {
-            "label": "1",
+            "label": "> 1",
             "next": "pathA"
           },
           {
-            "label": "2",
+            "label": "> 2",
             "next": "pathB"
           }
         ]
@@ -220,45 +216,45 @@
       "paths": {
         "pathA": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 1. Oben auf dem Bildschirm steht «Vaudoise &» mein Vorname.",
             "image": "images/cases/case-3-2A-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 1. Oben auf dem Bildschirm steht «Vaudoise &» mein Vorname.",
             "image": "images/cases/case-3-3A-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 1. Oben auf dem Bildschirm steht «Vaudoise &» mein Vorname.",
             "image": "images/cases/case-3-4A-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 1. Oben auf dem Bildschirm steht «Vaudoise &» mein Vorname.",
             "image": "images/cases/case-3-5A-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 1. Oben auf dem Bildschirm steht «Vaudoise &» mein Vorname.",
             "image": "images/cases/case-3-6A-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Eröffnen Sie ein EasyVista-Ticket, wenn das Problem weiterhin besteht.",
             "image": "images/cases/case-3-7A-de.png"
           }
         ],
         "pathB": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 2. Auf dem Bildschirm steht «Vaudoise &» mein Vorname und ein Block «Laufende Anfrage».",
             "image": "images/cases/case-3-2B-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 2. Auf dem Bildschirm steht «Vaudoise &» mein Vorname und ein Block «Laufende Anfrage».",
             "image": "images/cases/case-3-3B-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Fall 2. Auf dem Bildschirm steht «Vaudoise &» mein Vorname und ein Block «Laufende Anfrage».",
             "image": "images/cases/case-3-4B-de.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Eröffnen Sie ein EasyVista-Ticket, wenn das Problem weiterhin besteht.",
             "image": "images/cases/case-3-5B-de.png"
           }
         ]
@@ -267,21 +263,17 @@
     {
       "id": "case_4",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Schauen Sie im Bereich «Delegationen Vaudoise-Kundenportal»",
         "image": "images/cases/case-4-1-de.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Wie überprüfe ich die Identität?",
           "image": "images/cases/case-4-2-de.png"
         },
         {
           "title": "Je n’arrive pas à créer mon Espace client",
           "image": "images/cases/case-4-3-de.png"
-        },
-        {
-          "title": "Je n’arrive pas à créer mon Espace client",
-          "image": "images/cases/case-4-4-de.png"
         }
       ]
     }
@@ -291,7 +283,7 @@
       "id": "case_1",
       "start": {
         "id": "case-1-1",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
         "image": "images/cases/case-1-1-it.png",
         "cardsContent": {
           "title": "",
@@ -313,7 +305,7 @@
       "slides": [
         {
           "id": "case-1-2",
-          "title": "Je n’arrive pas à me connecter à mon Espace client",
+          "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
           "image": "images/cases/case-1-2-it.png"
         }
       ]
@@ -321,25 +313,25 @@
     {
       "id": "case_2",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Come fornire assistenza? Fase 1",
         "image": "images/cases/case-2-1-it.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Come fornire assistenza? Fase 2",
           "image": "images/cases/case-2-2-it.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Come fornire assistenza? Fase 3",
           "image": "images/cases/case-2-3-it.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Come fornire assistenza? Fase 4",
           "image": "images/cases/case-2-4-it.png",
           "showCase3Btn": true
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
           "image": "images/cases/case-2-5-it.png"
         }
       ]
@@ -348,7 +340,7 @@
       "id": "case_3",
       "start": {
         "id": "start",
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Con quale scenario siete confrontati?",
         "image": "images/cases/case-3-1-it.png",
         "choices": [
           {
@@ -364,45 +356,45 @@
       "paths": {
         "pathA": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 1. Vedo la schermata con scritto Vaudoise e il mio nome in alto.",
             "image": "images/cases/case-3-2A-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 1. Vedo la schermata con scritto Vaudoise e il mio nome in alto.",
             "image": "images/cases/case-3-3A-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 1. Vedo la schermata con scritto Vaudoise e il mio nome in alto.",
             "image": "images/cases/case-3-4A-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 1. Vedo la schermata con scritto Vaudoise e il mio nome in alto.",
             "image": "images/cases/case-3-5A-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 1. Vedo la schermata con scritto Vaudoise e il mio nome in alto.",
             "image": "images/cases/case-3-6A-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
             "image": "images/cases/case-3-7A-it.png"
           }
         ],
         "pathB": [
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 2. Vedo la schermata con scritto Vaudoise e il mio nome, e un riquadro indicante «Richiesta in corso».",
             "image": "images/cases/case-3-2B-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 2. Vedo la schermata con scritto Vaudoise e il mio nome, e un riquadro indicante «Richiesta in corso».",
             "image": "images/cases/case-3-3B-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Caso 2. Vedo la schermata con scritto Vaudoise e il mio nome, e un riquadro indicante «Richiesta in corso».",
             "image": "images/cases/case-3-4B-it.png"
           },
           {
-            "title": "Je n’arrive pas à créer mon Espace client",
+            "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
             "image": "images/cases/case-3-5B-it.png"
           }
         ]
@@ -411,21 +403,17 @@
     {
       "id": "case_4",
       "start": {
-        "title": "Face à quel cas vous trouvez-vous ?",
+        "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
         "image": "images/cases/case-4-1-it.png"
       },
       "slides": [
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Come verificare l’identità del cliente?",
           "image": "images/cases/case-4-2-it.png"
         },
         {
-          "title": "Je n’arrive pas à créer mon Espace client",
+          "title": "Se il problema persiste, aprite un ticket EasyVista.",
           "image": "images/cases/case-4-3-it.png"
-        },
-        {
-          "title": "Je n’arrive pas à créer mon Espace client",
-          "image": "images/cases/case-4-4-it.png"
         }
       ]
     }
