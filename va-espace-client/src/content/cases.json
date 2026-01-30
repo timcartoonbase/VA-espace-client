@@ -191,7 +191,8 @@
         },
         {
           "title": "Je n’arrive pas à créer mon Espace client",
-          "image": "images/cases/case-2-4-de.png"
+          "image": "images/cases/case-2-4-de.png",
+          "showCas3Btn": true
         },
         {
           "title": "Je n’arrive pas à créer mon Espace client",
@@ -281,6 +282,150 @@
         {
           "title": "Je n’arrive pas à créer mon Espace client",
           "image": "images/cases/case-4-4-de.png"
+        }
+      ]
+    }
+  ],
+  "it": [
+    {
+      "id": "case_1",
+      "start": {
+        "id": "case-1-1",
+        "title": "Face à quel cas vous trouvez-vous ?",
+        "image": "images/cases/case-1-1-it.png",
+        "cardsContent": {
+          "title": "",
+          "subtitle": "",
+          "card_1_title": "",
+          "card_1_subtitle": "",
+          "card_1_paragraph": "",
+          "card_1_back": "",
+          "card_2_title": "",
+          "card_2_subtitle": "",
+          "card_2_paragraph": "",
+          "card_2_back": "",
+          "card_3_title": "",
+          "card_3_subtitle": "",
+          "card_3_paragraph": "",
+          "card_3_back": ""
+        }
+      },
+      "slides": [
+        {
+          "id": "case-1-2",
+          "title": "Je n’arrive pas à me connecter à mon Espace client",
+          "image": "images/cases/case-1-2-it.png"
+        }
+      ]
+    },
+    {
+      "id": "case_2",
+      "start": {
+        "title": "Face à quel cas vous trouvez-vous ?",
+        "image": "images/cases/case-2-1-it.png"
+      },
+      "slides": [
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-2-2-it.png"
+        },
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-2-3-it.png"
+        },
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-2-4-it.png",
+          "showCase3Btn": true
+        },
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-2-5-it.png"
+        }
+      ]
+    },
+    {
+      "id": "case_3",
+      "start": {
+        "id": "start",
+        "title": "Face à quel cas vous trouvez-vous ?",
+        "image": "images/cases/case-3-1-it.png",
+        "choices": [
+          {
+            "label": "1",
+            "next": "pathA"
+          },
+          {
+            "label": "2",
+            "next": "pathB"
+          }
+        ]
+      },
+      "paths": {
+        "pathA": [
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-2A-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-3A-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-4A-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-5A-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-6A-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-7A-it.png"
+          }
+        ],
+        "pathB": [
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-2B-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-3B-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-4B-it.png"
+          },
+          {
+            "title": "Je n’arrive pas à créer mon Espace client",
+            "image": "images/cases/case-3-5B-it.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "case_4",
+      "start": {
+        "title": "Face à quel cas vous trouvez-vous ?",
+        "image": "images/cases/case-4-1-it.png"
+      },
+      "slides": [
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-4-2-it.png"
+        },
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-4-3-it.png"
+        },
+        {
+          "title": "Je n’arrive pas à créer mon Espace client",
+          "image": "images/cases/case-4-4-it.png"
         }
       ]
     }

@@ -6,6 +6,7 @@ const Modal = ({ caseData, onClose }) => {
   if (!caseData) return null;
 
   const isBranching = !!caseData.paths; // case 3
+  // const isShowCas3Btn = caseData.showCas3Btn;
   const initialSlides = !isBranching
     ? caseData.slides || [caseData.start]
     : [caseData.start];
@@ -100,6 +101,20 @@ const Modal = ({ caseData, onClose }) => {
                 </div>
               )}
             </div>
+
+            {/* {showCas3Btn && (
+              <div className="case3-button-container">
+                <button
+                  className="case3-start-btn"
+                  onClick={() => {
+                    setPathKey("optionA");
+                    setIndex(0);
+                  }}
+                >
+                  Start Case 3 - Option A
+                </button>
+              </div>
+            )} */}
 
             {/* RIGHT ARROW */}
             {showArrows && index < slides.length - 1 && (
