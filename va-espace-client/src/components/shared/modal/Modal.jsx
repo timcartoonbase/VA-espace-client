@@ -97,6 +97,7 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
                     isVertical
                     titleSize="small"
                     isCaseC
+                    lang={lang}
                   />
                 </div>
               )}

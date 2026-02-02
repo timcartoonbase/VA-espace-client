@@ -76,6 +76,7 @@ function App() {
             content={content["2-cards"]}
             blockColor="#6ac39d"
             isVertical
+            lang={lang}
           />
         </div>
       )}
@@ -109,6 +110,7 @@ function App() {
           content={content["5-cards"]}
           titleColor="#de99b5"
           blockColor="#ffffff"
+          lang={lang}
         />
       )}
 
