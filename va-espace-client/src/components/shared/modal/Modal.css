@@ -245,7 +245,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   text-align: left;
-  padding: 8px 12px;
+  padding: 0.1rem 4rem 1.5rem 4rem;
   border-radius: 8px;
   z-index: 2;
 }
@@ -293,4 +293,25 @@
 
 .case-close-btn:hover {
   opacity: 1;
+}
+
+.close-overlay-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: none;
+
+  /* background: rgba(0, 0, 0, 0.75);
+  color: #fff; */
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.close-overlay-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
 }

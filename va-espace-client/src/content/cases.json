@@ -64,11 +64,11 @@
         "image": "images/cases/case-3-1.png",
         "choices": [
           {
-            "label": "1",
+            "label": "> 1",
             "next": "pathA"
           },
           {
-            "label": "2",
+            "label": "> 2",
             "next": "pathB"
           }
         ]
@@ -305,7 +305,7 @@
       "slides": [
         {
           "id": "case-1-2",
-          "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
+          "title": "Se il problema persiste, aprite un ticket EasyVista.",
           "image": "images/cases/case-1-2-it.png"
         }
       ]
@@ -331,7 +331,7 @@
           "showCase3Btn": true
         },
         {
-          "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
+          "title": "Se il problema persiste, aprite un ticket EasyVista.",
           "image": "images/cases/case-2-5-it.png"
         }
       ]
@@ -344,11 +344,11 @@
         "image": "images/cases/case-3-1-it.png",
         "choices": [
           {
-            "label": "1",
+            "label": "> 1",
             "next": "pathA"
           },
           {
-            "label": "2",
+            "label": "> 2",
             "next": "pathB"
           }
         ]
@@ -376,7 +376,7 @@
             "image": "images/cases/case-3-6A-it.png"
           },
           {
-            "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
+            "title": "Se il problema persiste, aprite un ticket EasyVista.",
             "image": "images/cases/case-3-7A-it.png"
           }
         ],
@@ -394,7 +394,7 @@
             "image": "images/cases/case-3-4B-it.png"
           },
           {
-            "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
+            "title": "Se il problema persiste, aprite un ticket EasyVista.",
             "image": "images/cases/case-3-5B-it.png"
           }
         ]
@@ -403,7 +403,7 @@
     {
       "id": "case_4",
       "start": {
-        "title": "Guardi la sezione «Delegazioni dell’area clienti Vaudoise».",
+        "title": "Se il problema persiste, aprite un ticket EasyVista.",
         "image": "images/cases/case-4-1-it.png"
       },
       "slides": [

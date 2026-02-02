@@ -8,6 +8,12 @@ const OPEN_LABEL = {
   it: "Aprire",
 };
 
+const CLOSE_LABEL = {
+  fr: "Fermer",
+  de: "Schliessen",
+  it: "Chiudere",
+};
+
 // Add `openCase3` as a prop
 const Modal = ({ caseData, onClose, lang, openCase3 }) => {
   if (!caseData) return null;
@@ -155,6 +161,10 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
                   Case 3
                 </button>
               )} */}
+              {/* CLOSE BUTTON – bottom center over image */}
+              <button className="close-overlay-btn" onClick={onClose}>
+                {CLOSE_LABEL[lang] || CLOSE_LABEL.fr}
+              </button>
             </div>
 
             {/* RIGHT ARROW */}
