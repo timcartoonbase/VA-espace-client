@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import CardsBlock from "../../cards-block/CardsBlock";
 import "./Modal.css";
 
+const OPEN_LABEL = {
+  fr: "Ouvrir",
+  de: "Öffnen",
+  it: "Aprire",
+};
+
 // Add `openCase3` as a prop
 const Modal = ({ caseData, onClose, lang, openCase3 }) => {
   if (!caseData) return null;
 
   const isBranching = !!caseData.paths;
+
   const initialSlides = !isBranching
     ? caseData.slides || [caseData.start]
     : [caseData.start];
@@ -26,6 +33,8 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
   const showDecision =
     isBranching && !pathKey && currentSlide.choices?.length > 0;
   const showArrows = slides.length > 1 || history.length > 0;
+
+  const isLastSlide = index === slides.length - 1;
 
   const goNext = () => {
     if (index < slides.length - 1) setIndex((i) => i + 1);
@@ -70,7 +79,21 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
             {/* IMAGE + TITLE + CARDS */}
             <div className="carousel-frame" style={{ position: "relative" }}>
               {currentSlide.title && (
-                <div className="carousel-title">{currentSlide.title}</div>
+                <div className="carousel-title">
+                  <div>{currentSlide.title}</div>
+
+                  {isLastSlide && (
+                    <a
+                      href="https://support-apps.vaudoise.ch/s/probleme"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="open-last-slide-btn">
+                        {OPEN_LABEL[lang] || OPEN_LABEL.fr}
+                      </button>
+                    </a>
+                  )}
+                </div>
               )}
 
               <div className="case-image-wrapper">
@@ -118,7 +141,7 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
               )}
 
               {/* NEW: Case 3 button on slide 2-4 */}
-              {showCase3Button && openCase3 && (
+              {/* {showCase3Button && openCase3 && (
                 <button
                   className="case3-open-btn"
                   style={{
@@ -131,7 +154,7 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
                 >
                   Case 3
                 </button>
-              )}
+              )} */}
             </div>
 
             {/* RIGHT ARROW */}

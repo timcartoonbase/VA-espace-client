@@ -27,7 +27,7 @@ const FlipCard = ({
     >
       <div className="flip-card-inner">
         {/* FRONT */}
-        <div className="flip-card-face flip-card-front">
+        <div className={"flip-card-face flip-card-front"}>
           <img src={bgImage} alt="" className="flip-card-image" />
 
           <div className="flip-card-overlay">
