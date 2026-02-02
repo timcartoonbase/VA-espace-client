@@ -20,24 +20,20 @@ import casesImagede from "./assets/images/cases-image-de.svg";
 import heroImage1it from "./assets/images/hero-image-1-it.svg";
 import casesImageit from "./assets/images/cases-image-it.svg";
 
-const getLangFromPath = () => {
-  const path = window.location.pathname.toLowerCase();
-
-  if (path.includes("/de")) return "de";
-  if (path.includes("/it")) return "it";
-  return "fr";
+const getLangFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get("lang");
+  return ["fr", "de", "it"].includes(lang) ? lang : "fr";
 };
 
 function App() {
-  const [lang, setLang] = useState(() => getLangFromPath());
+  const [lang, setLang] = useState(getLangFromUrl);
 
   const { content, loading } = useContent(lang);
-
   useEffect(() => {
-    const expectedPath = `/${lang}`;
-    if (!window.location.pathname.startsWith(expectedPath)) {
-      window.history.replaceState(null, "", expectedPath);
-    }
+    const params = new URLSearchParams(window.location.search);
+    params.set("lang", lang);
+    window.history.replaceState(null, "", `?${params.toString()}`);
   }, [lang]);
 
   useEffect(() => {}, [lang]);
