@@ -40,7 +40,7 @@ const Modal = ({ caseData, onClose, lang, openCase3 }) => {
     isBranching && !pathKey && currentSlide.choices?.length > 0;
   const showArrows = slides.length > 1 || history.length > 0;
 
-  const isLastSlide = index === slides.length - 1;
+  const isLastSlide = index === slides.length - 1 && (!isBranching || pathKey);
 
   const goNext = () => {
     if (index < slides.length - 1) setIndex((i) => i + 1);
