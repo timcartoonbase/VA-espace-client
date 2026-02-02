@@ -239,6 +239,7 @@
   text-align: center !important;
   font-family: "Fedra B", serif;
   top: 10vh;
+  white-space: pre-line;
   left: 16px;
   right: 16px;
   color: #ffffff;
