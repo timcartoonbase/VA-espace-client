@@ -5,7 +5,9 @@ import cardV1 from "../../assets/images/card-v-1.svg";
 import cardV2 from "../../assets/images/card-v-2.svg";
 import cardV3 from "../../assets/images/card-v-3.svg";
 
-import cardH1 from "../../assets/images/card-h-1.png";
+import cardH1fr from "../../assets/images/card-h-1-fr.png";
+import cardH1de from "../../assets/images/card-h-1-de.png";
+import cardH1it from "../../assets/images/card-h-1-it.png";
 import cardH2 from "../../assets/images/card-h-2.svg";
 
 import cardC1 from "../../assets/images/card-c-1.png";
@@ -47,6 +49,12 @@ const CardsBlock = ({
   isCaseC,
   lang = "fr", // <-- NEW prop
 }) => {
+  const cardH1ByLang = {
+    fr: cardH1fr,
+    de: cardH1de,
+    it: cardH1it,
+  };
+
   // Determine card images based on case type AND language
   const verticalImages = isCaseC
     ? lang === "de"
@@ -62,7 +70,7 @@ const CardsBlock = ({
       : lang === "it"
         ? [cardC1it, cardC2it, cardC3it]
         : [cardC1, cardC2, cardC3]
-    : [cardH1, cardH2];
+    : [cardH1ByLang[lang] ?? cardH1fr, cardH2];
 
   const flippedImages = isCaseC
     ? lang === "de"
