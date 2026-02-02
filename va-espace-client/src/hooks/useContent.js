@@ -12,7 +12,7 @@ export const useContent = (language) => {
       const { data, error } = await supabase
         .from("va_espace_client_content")
         .select("*")
-        .eq("language", language); // ✅ FILTER BY LANGUAGE
+        .eq("language", language);
 
       console.log("Language:", language, "Rows:", data);
 

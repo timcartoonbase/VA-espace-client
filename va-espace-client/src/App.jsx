@@ -27,16 +27,17 @@ const getLangFromUrl = () => {
 };
 
 function App() {
-  const initialLangRef = useRef(getLangFromUrl());
-  const [lang, setLang] = useState(initialLangRef.current);
+  const [lang, setLang] = useState(getLangFromUrl());
 
   const { content, loading } = useContent(lang);
 
-  useEffect(() => {
+  // update URL ONLY when user clicks language buttons
+  const changeLang = (newLang) => {
     const params = new URLSearchParams(window.location.search);
-    params.set("lang", lang);
+    params.set("lang", newLang);
     window.history.replaceState(null, "", `?${params.toString()}`);
-  }, [lang]);
+    setLang(newLang);
+  };
 
   useEffect(() => {}, [lang]);
 
@@ -79,7 +80,7 @@ function App() {
         <LandingBlock
           content={content["1-landing"]}
           lang={lang}
-          setLang={setLang}
+          setLang={changeLang}
           onScroll={handleScroll}
         />
       )}
