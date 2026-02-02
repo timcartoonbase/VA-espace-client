@@ -20,9 +20,25 @@ import casesImagede from "./assets/images/cases-image-de.svg";
 import heroImage1it from "./assets/images/hero-image-1-it.svg";
 import casesImageit from "./assets/images/cases-image-it.svg";
 
+const getLangFromPath = () => {
+  const path = window.location.pathname.toLowerCase();
+
+  if (path.startsWith("/de")) return "de";
+  if (path.startsWith("/it")) return "it";
+  return "fr"; // default
+};
+
 function App() {
-  const [lang, setLang] = useState("fr");
+  const [lang, setLang] = useState(() => getLangFromPath());
+
   const { content, loading } = useContent(lang);
+
+  useEffect(() => {
+    const expectedPath = `/${lang}`;
+    if (!window.location.pathname.startsWith(expectedPath)) {
+      window.history.replaceState(null, "", expectedPath);
+    }
+  }, [lang]);
 
   useEffect(() => {}, [lang]);
 
