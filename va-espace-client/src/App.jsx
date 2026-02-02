@@ -23,9 +23,9 @@ import casesImageit from "./assets/images/cases-image-it.svg";
 const getLangFromPath = () => {
   const path = window.location.pathname.toLowerCase();
 
-  if (path.startsWith("/de")) return "de";
-  if (path.startsWith("/it")) return "it";
-  return "fr"; // default
+  if (path.includes("/de")) return "de";
+  if (path.includes("/it")) return "it";
+  return "fr";
 };
 
 function App() {
