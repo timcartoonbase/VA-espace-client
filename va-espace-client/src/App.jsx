@@ -27,9 +27,11 @@ const getLangFromUrl = () => {
 };
 
 function App() {
-  const [lang, setLang] = useState(getLangFromUrl);
+  const initialLangRef = useRef(getLangFromUrl());
+  const [lang, setLang] = useState(initialLangRef.current);
 
   const { content, loading } = useContent(lang);
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     params.set("lang", lang);
