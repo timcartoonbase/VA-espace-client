@@ -9,8 +9,15 @@
   padding-bottom: clamp(4rem, 2vw, 8rem);
 }
 
+/* 🔽 Smaller screens */
+/* @media (max-width: 1300px) {
+  .card-title {
+    padding-bottom: clamp(2rem, 1.5vw, 4rem);
+  }
+} */
+
 .card-title-h {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .card-subtitle {
@@ -40,7 +47,7 @@
 
 @media (min-width: 768px) and (max-width: 1300px) {
   .card-title {
-    padding-bottom: clamp(1rem, 2vw, 3rem);
+    padding-bottom: 1.5rem;
   }
 
   .card-subtitle {
