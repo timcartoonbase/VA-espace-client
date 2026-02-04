@@ -6,7 +6,7 @@
   font-weight: 700;
   margin: 0;
   color: #3e3e3e;
-  padding-bottom: clamp(4rem, 2vw, 8rem);
+  padding-bottom: clamp(3rem, 2vw, 10rem);
 }
 
 /* 🔽 Smaller screens */
@@ -22,7 +22,7 @@
 
 .card-subtitle {
   font-family: "TheSansB3", system-ui, sans-serif;
-  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
   font-weight: 400;
   margin: 0;
   color: #ffffff;
@@ -44,6 +44,17 @@
 }
 
 /* ================= RESPONSIVE TEXT ================= */
+
+@media (min-width: 1500px) {
+  .card-title {
+    padding-bottom: clamp(5rem, 4vw, 12rem);
+    /* padding-bottom: 4vw; */
+  }
+
+  .card-subtitle {
+    padding-bottom: clamp(8rem, 12vw, 12rem);
+  }
+}
 
 @media (min-width: 768px) and (max-width: 1300px) {
   .card-title {
