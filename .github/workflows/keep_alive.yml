@@ -2,18 +2,29 @@ name: Supabase Keep Alive
 
 on:
   schedule:
-    # This runs at 00:00 every Monday
-    - cron: '0 0 * * 1'
-  workflow_dispatch: # Allows you to run it manually for testing
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual testing
 
 jobs:
   ping_supabase:
     runs-on: ubuntu-latest
     steps:
-      - name: Insert row into Supabase
+      - name: Daily GET / Weekly POST Ping
         run: |
-          curl -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/keep_alive" \
-          -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d '{}'
+          # Get the current day of the week (1 = Monday ... 7 = Sunday)
+          DAY=$(date +%u)
+          
+          if [ "$DAY" -eq 1 ]; then
+            echo "It's Monday! Inserting a row (POST)..."
+            curl -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/keep_alive" \
+              -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+              -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d '{}'
+          else
+            echo "Standard day. Performing a read (GET)..."
+            curl "${{ secrets.SUPABASE_URL }}/rest/v1/keep_alive?select=*&limit=1" \
+              -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+              -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
+          fi
