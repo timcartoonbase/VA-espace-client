@@ -15,7 +15,7 @@ jobs:
           # Get the current day of the week (1 = Monday ... 7 = Sunday)
           DAY=$(date +%u)
           
-          if [ "$DAY" -eq 1 ]; then
+          if [ "$DAY" -eq 3 ]; then
             echo "It's Monday! Inserting a row (POST)..."
             curl -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/keep_alive" \
               -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
