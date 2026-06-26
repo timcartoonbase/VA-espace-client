@@ -21,19 +21,19 @@ const thumbnailsByLang = {
 };
 const videoLinksByLang = {
   fr: [
-    "https://youtu.be/G9NLuDNLFhs", // Tuto 1
-    "https://youtu.be/2-O4W-H7ZT4", // Tuto 3
-    "https://youtu.be/lGAH72SkLyQ", // Tuto 4
+    "https://www.youtube.com/watch?v=G9NLuDNLFhs", // Tuto 1
+    "https://www.youtube.com/watch?v=2-O4W-H7ZT4", // Tuto 3
+    "https://www.youtube.com/watch?v=lGAH72SkLyQ", // Tuto 4
   ],
   de: [
-    "https://youtu.be/PgUywCrIpaM",
-    "https://youtu.be/KlxhwfnC5TM",
-    "https://youtu.be/1riiSTwecLE",
+    "https://www.youtube.com/watch?v=PgUywCrIpaM",
+    "https://www.youtube.com/watch?v=KlxhwfnC5TM",
+    "https://www.youtube.com/watch?v=1riiSTwecLE",
   ],
   it: [
-    "https://youtu.be/qXi4UmHloLM",
-    "https://youtu.be/tJHNg_Q4_zw",
-    "https://youtu.be/0umyua5QZEA",
+    "https://www.youtube.com/watch?v=qXi4UmHloLM",
+    "https://www.youtube.com/watch?v=tJHNg_Q4_zw",
+    "https://www.youtube.com/watch?v=0umyua5QZEA",
   ],
 };
 
