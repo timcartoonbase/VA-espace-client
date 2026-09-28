@@ -24,7 +24,7 @@ jobs:
               -d '{}'
           else
             echo "Standard day. Performing a read (GET)..."
-            curl "${{ secrets.SUPABASE_URL }}/rest/v1/keep_alive?select=*&limit=1" \
+            curl "${{ secrets.SUPABASE_URL }}/rest/v1/va_espace_client_content?select=*&limit=1" \
               -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
               -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
           fi
